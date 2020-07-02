@@ -1,0 +1,26 @@
+body{
+  background-color: #201f20;
+}
+
+.App{
+  background-color: rgb(230, 126, 57);
+  min-height: 500px;
+  width: 400px;
+  margin: 40px auto;
+}
+
+#to-do-form input{
+  background-color: rgb(247, 181, 107);
+  border: 0;
+  width: 200px;
+  height: 25px;
+  padding: 0 20px;
+  margin: 20px;
+}
+
+#to-do-form button {
+  height: 25px;
+  background-color: #201f20;
+  color: rgb(224, 205, 205);
+  border: 0;
+}
