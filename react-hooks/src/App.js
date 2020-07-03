@@ -1,105 +1,70 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 
-const App = () => {
-  //state
-  const [news, setNews] = useState([])
-  const [searchQuery, setSearchQuery] = useState('world')
-  const [url, setUrl] = useState('http://hn.algolia.com/api/v1/search?query=world');
-  const [loading, setLoading] = useState(false)
-  //fetch news
-  const fetchNews = () => {
-    //loading true while fetching
-    setLoading(true)
+function App() {
 
-    fetch(url)
-    .then(result => result.json())
-    // .then(data => console.log(data))
-    .then(data => (setNews(data.hits)), setLoading(false))
-    .catch(error => console.log(error))
+  // const [resourceType, setResourceType] = useState('posts')
+  // const [items, setItems] = useState([])
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth)
   }
 
-  useEffect(() =>{
-    fetchNews()
-  }, [url])
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
 
-  const handleChange = (e) => {
-    setSearchQuery(e.target.value)
-  }
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+  
+  // useEffect(() => {
+  //   fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+  //     .then(response => response.json())
+  //     .then(json => setItems(json))
 
-  const handleSubmit = e =>{
-    e.preventDefault()
-    setUrl(`http://hn.algolia.com/api/v1/search?query=${searchQuery}`)
-  }
+  // }, [resourceType])
 
-  const showLoading = () => (loading ? <h2>Loading...</h2> : "")
+  // const [count, setCount] = useState(4)
+  // const [theme, setTheme] = useState('blue')
+  // // const count = state.count
+  // // const theme = state.theme
+  
 
-  const searchForm = () => (
-    <form onSubmit = {handleSubmit}>
-        <input type = "text" value = {searchQuery} onChange={handleChange}></input>
-        <button>Search</button>
-      </form>
-  )
+  // function decrementCount(){
+  //   setCount(prevCount => prevCount -1)
+  // }
 
-  const showNews = () => {
-    return(
-      news.map((n, i) => (<p key = {i}>{n.title}</p>))
-    )
-  }
+  // function incrementCount(){
+  //   setCount(prevCount => prevCount + 1)
+  //   setTheme('red')
+  // }
+
 
   return(
-    <div>
-      <h1>News</h1>
-      {showLoading()}
-      {searchForm()}
-      {showNews()}
-    </div>
+    // <div className="App">
+    //    <button onClick = {decrementCount}>-</button>
+    //    <span>{count}</span>
+    //    <span>{theme}</span>
+    //    <button onClick = {incrementCount}>+</button>
+    // </div>
+  //  <>
+  //   <div>
+  //     <button onClick = {() => setResourceType('posts')}>Posts</button>
+  //     <button onClick = {() => setResourceType('users')}>Users</button>
+  //     <button onClick = {() => setResourceType('comments')}>Comments</button>
+  //   </div>
+  //   <h1>{resourceType}</h1>
+  //   {items.map(item => {
+  //     return <pre>{JSON.stringify(item)}</pre>
+  //   })}
+  //   </>
+  <div>
+    {windowWidth}
+
+  </div>
   )
 }
-
-// const App = () => {
-//   const [count, setCount] = useState(0)
-
-//   useEffect(() =>{
-//     document.title = `Clicked ${count} times`
-//   })
-
-//   const increment = () => {
-//     setCount(count + 1);
-//   }
-
-//       return (
-//       <div className="App">
-//         <h1>Counter App</h1>
-//         <button onClick = {increment}>Clicked {count} times</button>
-//         <button onClick = {resetBtn}> Reset </button>
-//       </div>
-//     );
-
-// }
-
-// class App extends Component {
-//   state = {
-//     count: 0
-//   }
-//   increment = () => {
-//     this.setState({
-//       count: this.state.count + 1
-//     });
-//   }
-//   componentDidMount() {
-//     document.title = `Clicked ${this.state.count} times`
-//   }
-//   componentDidUpdate() {
-//     document.title = `Clicked ${this.state.count} times`
-//   }
-//   render(){
-//     return (
-//       <div className="App">
-//         <h1>Counter App</h1>
-//         <button onClick = {this.increment}>Clicked {this.state.count} times</button>
-//       </div>
-//     );
-//   }
-// }
 
 export default App;
