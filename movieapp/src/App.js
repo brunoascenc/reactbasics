@@ -7,20 +7,27 @@ function App() {
   const [upcomingMovies, setUpcomingMovies] = useState([])
   const [popularMovies, setPopularMovies] = useState([])
   const [topRatedMovies, setTopRatedMovies] = useState([])
-  // const [searchMovie, setSearchMovie] = useState([])
+  const [searchMovie, setSearchMovie] = useState([])
+  const [buscar, setBusca] = useState('')
+  const [idBtn, setIdBtn] = useState(1)
 
   const IMAGE_URL = 'https://image.tmdb.org/t/p/w500/'
 
-  // const url = `https://api.themoviedb.org/3/search/movie?api_key=4a5e130486cb63a2caff652d783f6a36${query.value}`
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=4a5e130486cb63a2caff652d783f6a36&query=${idBtn}`
 
-  // useEffect(() => {
-  //   fetch(url)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       const getMovies = data.results
-  //       setSearchMovie(getMovies)
-  //     })
-  // }, [findMovie()])
+  useEffect(() => {
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const getMovies = data.results
+        console.log(getMovies)
+        setSearchMovie(getMovies)
+      })
+  }, [idBtn])
+
+  // const findMovie = value => {
+  //   const url = `${url}`
+  // }
 
 
   useEffect(() =>{
@@ -42,6 +49,11 @@ function App() {
      })
   }, [])
 
+  const handleCick = (e) => {
+    setIdBtn(buscar)
+    // e.stopPropagation();
+  }
+
   
   useEffect(() =>{
     fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=4a5e130486cb63a2caff652d783f6a36')
@@ -52,7 +64,7 @@ function App() {
      })
   }, [])
 
-
+  
   // console.log(upcomingMovies)
   return (
     <div className="App">
@@ -61,10 +73,14 @@ function App() {
       <img src={IMAGE_URL + items.poster_path}></img> */}
       <div className="searchMovies">
         <form action="">
-          <input type="text" placeholder="Search a movie"/>
-          <button>Search</button>
+          <input type="text" id = {buscar} onKeyDown={event => setBusca(event.target.value)} placeholder="Search a movie"/>
+          <button type = "button" onClick = {handleCick}>Search</button>
         </form>
+        {searchMovie.map(movie => {
+            return <img src={IMAGE_URL + movie.poster_path} id={movie.id} key={movie.id} alt="movie"/>
+         })}
       </div>
+
 
       <div className="upcomingMovies">
         <h1>Upcoming Movies</h1>
