@@ -1,13 +1,14 @@
-import React from 'react';
-import WeatherCard from './WeatherCard';
+import React from "react";
+import WeatherCard from "./components/WeatherCard/component";
 
-import './App.css';
-
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-    <WeatherCard/>
+      <WeatherCard tempeture={-15} />
+      <WeatherCard tempeture={25} />
+      <WeatherCard tempeture={-5} />
     </div>
   );
 }
