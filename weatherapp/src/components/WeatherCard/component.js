@@ -5,21 +5,20 @@ import Location from "./Location";
 import Icon from "./Icon";
 import Condition from "./Condition";
 
-const WeatherCard = (props) => {
-  // let tempeture = 18
+const WeatherCard = ({tempeture, condition, city, country}) => {
   let highColor = 0;
     let lowColor = 0;
     let bg = null;
-  if (props.tempeture > 12) {
-    highColor = (1 - (props.tempeture - 12) / 28) * 255;
+  if (tempeture > 12) {
+    highColor = (1 - (tempeture - 12) / 28) * 255;
       lowColor = highColor - 150;
       bg = ` linear-gradient(
       to top,
       rgb(255, ${highColor}, 0),
       rgb(255, ${lowColor}, 0)
     )`;
-  } else if (props.tempeture <= 12) {
-    highColor = (1 - (props.tempeture + 20) / 32) * 255;
+  } else if (tempeture <= 12) {
+    highColor = (1 - (tempeture + 20) / 32) * 255;
       lowColor = highColor - 150;
        bg = ` linear-gradient(
       to top,
@@ -27,6 +26,7 @@ const WeatherCard = (props) => {
       rgb(0, ${lowColor}, 255)
     )`;
   }
+
   const Card = styled.div`
     margin: 0 auto;
     background: ${bg};
@@ -38,11 +38,12 @@ const WeatherCard = (props) => {
     align-items: center;
     border-radius: 25px;
   `;
+
   return (
     <Card>
-      <Location />
-      <Icon />
-      <Condition />
+      <Location city={city} country={country}/>
+      <Icon condition={condition}/>
+      <Condition tempeture={tempeture} condition={condition}/>
     </Card>
   );
 };

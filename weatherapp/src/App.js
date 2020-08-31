@@ -1,14 +1,16 @@
 import React from "react";
-import WeatherCard from "./components/WeatherCard/component";
+// import WeatherCard from "./components/WeatherCard/component";
+import "./App.css"
+import WeatherEngine from "./components/WeatherEngine";
 
 import "./App.css";
 
 function App() {
+  
+
   return (
     <div className="App">
-      <WeatherCard tempeture={-15} />
-      <WeatherCard tempeture={25} />
-      <WeatherCard tempeture={-5} />
+      <WeatherEngine location="São Paulo, br" />
     </div>
   );
 }
