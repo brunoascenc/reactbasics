@@ -1,5 +1,4 @@
 import React from "react";
-// import WeatherCard from "./components/WeatherCard/component";
 import "./App.css"
 import WeatherEngine from "./components/WeatherEngine";
 
