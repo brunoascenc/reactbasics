@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+//Header
+.navbar {
+  display: flex;
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    li {
+      margin-left: 25px;
+    }
+  }
+}
+
+//banner
+.banner {
+  width: 100%;
+  height: 70vh;
+  background-color: green;
+  background: url("../src/banner.jfif");
+  background-position: center;
+  background-size: cover;
+}
+
+//Home
+.titulo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.produtos {
+  img {
+    max-width: 100%;
+  }
+
+  .prod-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    align-items: center;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+//footer
+.page-container {
+  position: relative;
+  min-height: 100vh;
+  justify-content: center;
+
+  .content-wrapper {
+    padding-bottom: 2.5rem;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    // height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: purple;
+  }
+  p{
+    width: 60%;
+  }
+}
+
+
+//Details
+.carousel{
+ padding: 30px;
+}
+
+// .carousel img {
+//   margin: auto;
+// }
+
+// .carousel-item{
+//   img{
+//     width: 70%;
+//     display: inline-block;
+//   }
+// }
+
+.carousel-indicators li {
+  background-color: rgb(57, 146, 219)  !important; //this can be whatever color you want
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233992db' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233992db' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
