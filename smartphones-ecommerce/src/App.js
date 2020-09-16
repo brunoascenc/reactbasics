@@ -1,22 +1,22 @@
-import React from "react";
-import "./App.css";
-import Header from "./pages/Header";
-import Home from "./pages/Home";
+import React from 'react';
+import Header from './components/Header'
+import Home from './pages/Home'
 import Apple from "./pages/Apple";
 import Samsung from "./pages/Samsung";
 import Asus from "./pages/Asus";
 import Motorola from "./pages/Motorola";
-import Sobre from "./pages/Sobre";
-import Contato from "./pages/Contato";
+import Contact from "./pages/Contact";
 import Login from "./pages/Login";
-import Cart from "./pages/Cart";
+import Carrinho from "./pages/Carrinho";
 import Details from "./pages/Details";
-import useData from "./pages/components/useData";
+import { DataProvider } from './data/DataProvider'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import './App.css';
 
 function App() {
   return (
-    <useData>
+    <DataProvider>
       <Router>
         <div className="App">
           <Header />
@@ -26,15 +26,14 @@ function App() {
             <Route path="/asus" component={Asus} />
             <Route path="/samsung" component={Samsung} />
             <Route path="/motorola" component={Motorola} />
-            <Route path="/sobre" component={Sobre} />
-            <Route path="/contato" component={Contato} />
+            <Route path="/contato" component={Contact} />
             <Route path="/login" component={Login} />
-            <Route path="/carrinho/:id" component={Cart} />
+            <Route path="/carrinho" component={Carrinho} />
             <Route path="/details/:id" component={Details} />
           </Switch>
         </div>
       </Router>
-    </useData>
+    </DataProvider>
   );
 }
 

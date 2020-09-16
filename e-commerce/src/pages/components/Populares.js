@@ -1,19 +1,21 @@
-import React from "react";
-import useData from "./useData";
+import React, { useContext } from "react";
+//import useData from "./useData";
+import DataContext from './useData'
 import "../../App.css";
 import { Link } from "react-router-dom";
 
 const Populares = () => {
-  const [celData] = useData();
+  const [products, setProducts] = useContext(DataContext);
 
   return (
+<useData>
     <div className="populares">
       <div className="titulo">
         <h3>Mais populares</h3>
       </div>
       <div className="produtos">
         <div className="prod-card">
-          {celData.map((item) => {
+          {products.map((item) => {
             return (
               <div className="item">
                 <Link to={"/details/" + item.id}>
@@ -27,6 +29,7 @@ const Populares = () => {
         </div>
       </div>
     </div>
+    </useData>
   );
 };
 

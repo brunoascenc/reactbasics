@@ -14,15 +14,11 @@ const Details = (props) => {
   const product = cellphonesData.find(
     (item) => item.id === props.match.params.id
   );
-
-  const handleCart = (product) => {
-    console.log("oi");
-    setCart([...cart, product]);
-  };
+  const [index, setIndex] = useState(0)
+  
 
   return (
     <>
-      <Header itemsAdded={cart.length} />
       {/* <img src={product.imagem} alt="cell" /> */}
       <Container>
         <Row className="justify-content-center">
@@ -55,11 +51,7 @@ const Details = (props) => {
             <h3>{product.tituloDetalhe}</h3>
             <p>R$: {product.preco}</p>
             <Link to={"/carrinho/" + product.id}>
-              <Button
-                onClick={() => handleCart(product)}
-                variant="primary"
-                size="lg"
-              >
+              <Button variant="primary" size="lg">
                 Comprar
               </Button>
             </Link>

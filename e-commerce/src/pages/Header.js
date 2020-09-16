@@ -21,7 +21,8 @@ const Header = ({itemsAdded}) => {
               <li>Login</li>
             </Link>
             <Link to="/carrinho">
-              <li>Cart {itemsAdded}</li>
+              <li>Cart</li>
+              <spa>0</spa>
             </Link>
           </ul>
         </nav>
