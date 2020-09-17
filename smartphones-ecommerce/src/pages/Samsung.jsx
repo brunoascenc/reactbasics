@@ -14,7 +14,7 @@ const Samsung = () => {
         return (
           <div key={product.id} className="card">
             <Link to={`/details/${product.id}`}>
-              <img src={product.imagem} />
+              <img src={product.imagem} alt={product.titulo} />
             </Link>
             <span>{product.titulo}</span>
             <span>{product.preco}</span>
