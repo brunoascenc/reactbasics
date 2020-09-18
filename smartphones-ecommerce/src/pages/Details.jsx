@@ -14,8 +14,8 @@ const Details = (props) => {
     <div>
       <img src={productDetail.imagem} alt={productDetail.titulo} />
       <h3>{productDetail.tituloDetalhe}</h3>
-      <span>{productDetail.preco}</span>
-      <Link to="/carrinho" onClick={() => addCart(productDetail.id)}>
+      <span>{productDetail.preco.toFixed(2)}</span>
+      <Link to="/cart" onClick={() => addCart(productDetail.id)}>
         Add to cart
       </Link>
     </div>

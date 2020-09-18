@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import StripeCheckout from "react-stripe-checkout";
 
-const Checkout = ({ total }) => {
-  const [product] = useState([]);
-
+const Checkout = ({ total, product }) => {
   const handlePayment = (token) => {
     const body = {
       token,
@@ -12,28 +10,25 @@ const Checkout = ({ total }) => {
     const headers = {
       "Content-Type": "application/json",
     };
-
-    return fetch(`http://localhost:3001/pagamento`, {
+    return fetch(`http://localhost:3001/payment`, {
       method: "POST",
-      headers,
+      headers: headers,
       body: JSON.stringify(body),
     })
       .then((res) => {
         alert("Obrigado pela compra!");
+        window.localStorage.clear(res);
         window.location.reload();
-        window.localStorage.clear();
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((error) => console.log(error));
   };
 
   return (
     <div>
       <StripeCheckout
-        stripeKey="pk_test_51HSKkOGiY20xWn7q37BDBkyBwyzdkjUCZlDaLTuc5KZG44vZpco0q9PLszLRwmoX2vTEBGGBbhDZEgKSRyfUGkzq007qWGkDWS"
+        stripeKey={process.env.REACT_APP_STRIPE_KEY}
         token={handlePayment}
-        name="Checkout"
+        name="Payment"
         amount={total * 100}
         shippingAddress
         billingAddress

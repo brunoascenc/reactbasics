@@ -1,6 +1,6 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import {DataContext} from '../data/DataProvider'
+import { DataContext } from "../data/DataProvider";
 
 const Header = () => {
   const value = useContext(DataContext);
@@ -27,14 +27,11 @@ const Header = () => {
             <Link to="/asus">
               <li>Asus</li>
             </Link>
-            <Link to="/contato">
-              <li>Contato</li>
+            <Link to="/contact">
+              <li>Contact</li>
             </Link>
-            <Link to="/login">
-              <li>Login</li>
-            </Link>
-            <Link to="/carrinho">
-              <li>Carrinho</li>
+            <Link to="/cart">
+              <li>Cart</li>
               <span>{cart.length}</span>
             </Link>
           </ul>

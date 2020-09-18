@@ -6,13 +6,11 @@ import Samsung from "./pages/Samsung";
 import Asus from "./pages/Asus";
 import Motorola from "./pages/Motorola";
 import Contact from "./pages/Contact";
-import Login from "./pages/Login";
-import Carrinho from "./pages/Carrinho";
+import Cart from "./pages/Cart";
 import Details from "./pages/Details";
 import Pagamento from "./pages/Pagamento";
 import { DataProvider } from './data/DataProvider'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import './App.css';
 
 function App() {
@@ -27,11 +25,10 @@ function App() {
             <Route path="/asus" component={Asus} />
             <Route path="/samsung" component={Samsung} />
             <Route path="/motorola" component={Motorola} />
-            <Route path="/contato" component={Contact} />
-            <Route path="/login" component={Login} />
-            <Route path="/carrinho" component={Carrinho} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/cart" component={Cart} />
             <Route path="/details/:id" component={Details} />
-            <Route path="/pagamento/:id" component={Pagamento} />
+            <Route path="/payment/:id" component={Pagamento} />
           </Switch>
         </div>
       </Router>

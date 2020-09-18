@@ -18,7 +18,7 @@ const Asus = () => {
                 <img src={product.imagem} alt={product.titulo} />
               </Link>
               <span>{product.titulo}</span>
-              <span>{product.preco}</span>
+              <span>{product.preco.toFixed(2)}</span>
             </div>
           );
         })}

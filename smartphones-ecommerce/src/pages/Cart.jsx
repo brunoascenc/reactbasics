@@ -1,9 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { DataContext } from "../data/DataProvider";
-import { Link } from "react-router-dom";
-import Checkout from '../components/Checkout'
+import Checkout from "../components/Checkout";
 
-const Carrinho = () => {
+const Cart = () => {
   const value = useContext(DataContext);
   const [cart, setCart] = value.cart;
   const [total, setTotal] = useState(0);
@@ -14,7 +13,8 @@ const Carrinho = () => {
       const res = cart.reduce((prev, item) => {
         return prev + item.preco * item.count;
       }, 0);
-      setTotal(res);
+      const totalValue = res.toFixed(2);
+      setTotal(totalValue);
     };
     getTotal();
   }, [cart]);
@@ -49,18 +49,16 @@ const Carrinho = () => {
     }
   };
 
-  if (cart.length === 0) return <h2>Carrinho vazio</h2>;
+  if (cart.length === 0) return <h2>Cart vazio</h2>;
 
   return (
     <div>
       {cart.map((product) => {
         return (
           <div key={product.id} className="card">
-            <Link to={`/details/${product.id}`}>
-              <img src={product.imagem} alt={product.titulo} />
-            </Link>
+            <img src={product.imagem} alt={product.titulo} />
             <span>{product.titulo}</span>
-            <span>{product.preco}</span>
+            <span>{product.preco.toFixed(2)}</span>
 
             <div className="quantity">
               <button onClick={() => decrement(product.id)}> - </button>
@@ -77,10 +75,10 @@ const Carrinho = () => {
 
       <div className="total-price">
         <h4>Total: R$: {total}</h4>
-        <Checkout total={total}/>
+        <Checkout product={cart} total={total} />
       </div>
     </div>
   );
 };
 
-export default Carrinho;
+export default Cart;
