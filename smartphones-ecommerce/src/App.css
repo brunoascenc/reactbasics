@@ -1,4 +1,224 @@
-.card-container{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
+body {
+  overflow-x: hidden;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/*-------Header--------*/
+a {
+  text-decoration: none;
+}
+
+header {
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  left: 0;
+  height: 20vh;
+}
+
+header .navbar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .navbar h1 {
+  margin-left: 4rem;
+  font-family: "Fugaz One", cursive;
+  text-transform: uppercase;
+  color: #292828;
+  color: #f0f5ef;
+  font-size: 2.3rem;
+}
+
+header .navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+header .navbar ul li {
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-right: 3rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #535252;
+}
+
+header .navbar .cart {
+  position: relative;
+}
+
+header .navbar .cart .cart-qtd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: -10px;
+  left: 22px;
+  background-color: #f1324c;
+  color: #f8f2f2;
+  padding: 3px 7px 3px 7px;
+  font-size: 12px;
+  border-radius: 5rem;
+}
+
+.dropdown-menu {
+  display: inherit !important;
+  width: 250px;
+  position: absolute;
+  top: 5vh;
+  list-style: none;
+  text-align: start;
+}
+
+.shop-link {
+  color: #535252;
+}
+
+.dropdown-menu li {
+  background: #f1324c;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background: #ee5d70;
+}
+
+.dropdown-menu.clicked {
+  display: none;
+}
+
+.dropdown-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #ffff;
+  padding: 16px;
+}
+
+/*-------Landing page--------*/
+.landing-page {
+  position: relative;
+  z-index: -1;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.landing-page .bg-left {
+  position: relative;
+  background: #f1324c;
+}
+
+.landing-page .bg-left .landing-txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 25%;
+  left: 4rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #1d1d1c;
+}
+
+.landing-page .bg-left .landing-txt h2 {
+  text-transform: uppercase;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 5rem;
+  letter-spacing: 5px;
+  font-weight: 100;
+}
+
+.landing-page .bg-left .landing-txt button {
+  background: none;
+  border: none;
+  width: 100%;
+  font-size: 1.2rem;
+  color: #f1eaea;
+  padding: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.landing-page .bg-right {
+  position: relative;
+  background: #f3f3f7;
+}
+
+.landing-page .bg-right .socials {
+  position: absolute;
+  right: 4rem;
+  top: 40%;
+}
+
+.landing-page .bg-right .socials ul {
+  list-style: none;
+}
+
+.landing-page .bg-right .socials ul li {
+  margin-top: 1rem;
+  color: #242222;
+}
+
+.landing-page .banner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+}
+
+.landing-page .banner img {
+  max-height: 100%;
+  max-width: 65%;
+}
+
+.landing-page .more-btn {
+  font-size: 2.5rem;
+}
+
+/*-------Cards--------*/
+.card-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+/*# sourceMappingURL=App.css.map */
