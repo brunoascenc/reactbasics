@@ -26,14 +26,61 @@ header {
   height: 20vh;
 }
 
+@media (max-width: 960px) {
+  header {
+    top: 0;
+  }
+}
+
+@media (max-width: 960px) {
+  header .nav-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+}
+
+@media (max-width: 767px) {
+  header .nav-menu {
+    width: 80%;
+  }
+}
+
+@media (max-width: 960px) {
+  header .nav-menu.active {
+    background: #242222;
+    left: 0;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+}
+
 header .navbar {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 0.7rem;
 }
 
 header .navbar h1 {
@@ -41,8 +88,25 @@ header .navbar h1 {
   font-family: "Fugaz One", cursive;
   text-transform: uppercase;
   color: #292828;
-  color: #f0f5ef;
   font-size: 2.3rem;
+}
+
+header .navbar .hidden-link {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  header .navbar .hidden-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 960px) {
+  header .navbar .nav-item {
+    display: none;
+  }
 }
 
 header .navbar ul {
@@ -52,12 +116,36 @@ header .navbar ul {
   list-style: none;
 }
 
+@media (max-width: 960px) {
+  header .navbar ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 header .navbar ul li {
   font-family: "IBM Plex Sans", sans-serif;
   margin-right: 3rem;
   font-size: 1.2rem;
   text-transform: uppercase;
   color: #535252;
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  header .navbar ul li {
+    color: #e4d9d9;
+    font-size: 1.5rem;
+    padding: 15px 50px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+  }
+  header .navbar ul li:hover {
+    background-color: #f05065;
+  }
 }
 
 header .navbar .cart {
@@ -81,17 +169,58 @@ header .navbar .cart .cart-qtd {
   border-radius: 5rem;
 }
 
+@media (max-width: 960px) {
+  header .navbar .cart .cart-qtd {
+    top: 3px;
+    left: 70px;
+    background-color: #f1324c;
+  }
+}
+
+header .menu-icon {
+  display: none;
+  z-index: 1000;
+}
+
+@media (max-width: 960px) {
+  header .menu-icon {
+    display: block;
+    margin-right: 3rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+}
+
+/*--------Dropdown---------*/
 .dropdown-menu {
   display: inherit !important;
   width: 250px;
   position: absolute;
-  top: 5vh;
+  top: 8vh;
   list-style: none;
   text-align: start;
 }
 
+@media (max-width: 960px) {
+  .dropdown-menu {
+    background-color: red;
+  }
+}
+
 .shop-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #535252;
+}
+
+@media (max-width: 960px) {
+  .shop-link {
+    display: none;
+  }
 }
 
 .dropdown-menu li {
@@ -99,8 +228,10 @@ header .navbar .cart .cart-qtd {
   cursor: pointer;
 }
 
-.dropdown-menu li:hover {
-  background: #ee5d70;
+@media (max-width: 960px) {
+  .dropdown-menu li {
+    background-color: none;
+  }
 }
 
 .dropdown-menu.clicked {
@@ -112,8 +243,18 @@ header .navbar .cart .cart-qtd {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: #ffff;
+  color: #f5ecec;
   padding: 16px;
+}
+
+.dropdown-link:hover {
+  background: #f05065;
+}
+
+@media (max-width: 960px) {
+  .dropdown-link:hover {
+    background-color: gray;
+  }
 }
 
 /*-------Landing page--------*/
@@ -144,11 +285,11 @@ header .navbar .cart .cart-qtd {
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
-  top: 25%;
+  top: 40%;
   left: 4rem;
   letter-spacing: 1px;
   font-weight: bold;
-  color: #1d1d1c;
+  color: rgba(41, 41, 40, 0.76);
 }
 
 .landing-page .bg-left .landing-txt h2 {
@@ -160,13 +301,17 @@ header .navbar .cart .cart-qtd {
 }
 
 .landing-page .bg-left .landing-txt button {
-  background: none;
-  border: none;
+  background: #f3eeee;
+  background-color: #242222;
+  border: solid 2px #242222;
   width: 100%;
+  border-radius: 6rem;
   font-size: 1.2rem;
-  color: #f1eaea;
+  color: #f86b7e;
   padding: 0.7rem;
   letter-spacing: 1px;
+  -webkit-box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
+          box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
 }
 
 .landing-page .bg-right {
@@ -207,7 +352,7 @@ header .navbar .cart .cart-qtd {
 
 .landing-page .banner img {
   max-height: 100%;
-  max-width: 65%;
+  max-width: 57%;
 }
 
 .landing-page .more-btn {

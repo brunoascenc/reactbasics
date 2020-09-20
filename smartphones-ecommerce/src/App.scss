@@ -13,6 +13,23 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
 }
 
+//Vars
+$xs-desktop: 960px;
+$tablet: 767px;
+$main-red: #f1324c;
+
+@mixin xs-desktop {
+  @media (max-width: #{$xs-desktop}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
 /*-------Header--------*/
 a {
   text-decoration: none;
@@ -27,29 +44,91 @@ header {
   //   align-items: center;
   height: 20vh;
   //   background-color: #CF6766;
+  @include xs-desktop {
+    top: 0;
+  }
+
+  .nav-menu {
+    @include xs-desktop {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+    @include tablet{
+      width: 80%;
+    }
+  }
+
+  .nav-menu.active {
+    @include xs-desktop {
+      background: #242222;
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
+  }
+
 
   .navbar {
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    margin-top: 0.7rem;
     h1 {
       margin-left: 4rem;
       font-family: "Fugaz One", cursive;
       text-transform: uppercase;
       color: rgb(41, 40, 40);
-      color: rgb(240, 245, 239);
+      // color: rgb(240, 245, 239);
       font-size: 2.3rem;
+    }
+
+    .hidden-link{
+      display: none;
+      @include xs-desktop{
+        display: flex;
+      }
+    }
+
+    .nav-item{
+      @include xs-desktop{
+       display: none;
+      }
     }
 
     ul {
       display: flex;
       list-style: none;
+      @include xs-desktop {
+        justify-content: center;
+      }
+      
       li {
         font-family: "IBM Plex Sans", sans-serif;
         margin-right: 3rem;
         font-size: 1.2rem;
         text-transform: uppercase;
         color: rgb(83, 82, 82);
+        width: 100%;
+        @include xs-desktop {
+          color: rgb(228, 217, 217);
+          font-size: 1.5rem;
+          padding: 15px 50px;
+          font-weight: bold;
+          letter-spacing: 2px;
+          transition: 0.2s ease;
+          &:hover{
+            background-color: #f05065;
+          }
+        }
       }
     }
 
@@ -61,36 +140,63 @@ header {
         position: absolute;
         top: -10px;
         left: 22px;
-        background-color: #f1324c;
+        background-color: $main-red;
         color: rgb(248, 242, 242);
         padding: 3px 7px 3px 7px;
         font-size: 12px;
         border-radius: 5rem;
+        @include xs-desktop {
+          top: 3px;
+          left: 70px;
+          background-color: $main-red;
+        }
       }
+    }
+  }
+
+  .menu-icon {
+    display: none;
+    z-index: 1000;
+  }
+
+  .menu-icon {
+    @include xs-desktop {
+      display: block;
+      margin-right: 3rem;
+      font-size: 1.8rem;
+      cursor: pointer;
     }
   }
 }
 
+/*--------Dropdown---------*/
 .dropdown-menu {
   display: inherit !important;
   width: 250px;
   position: absolute;
-  top: 5vh;
+  top: 8vh;
   list-style: none;
   text-align: start;
+  @include xs-desktop{
+    background-color: red;
+  }
 }
 
 .shop-link {
+  display: flex;
+  align-items: center;
   color: rgb(83, 82, 82);
+  @include xs-desktop {
+    display: none;
+  }
 }
 
 .dropdown-menu li {
-  background: #f1324c;
+  background: $main-red;
   cursor: pointer;
-}
-
-.dropdown-menu li:hover {
-  background: #ee5d70;
+   @include xs-desktop{
+    background-color: none;
+  }
 }
 
 .dropdown-menu.clicked {
@@ -102,8 +208,15 @@ header {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: #ffff;
+  color: rgb(245, 236, 236);
   padding: 16px;
+}
+
+.dropdown-link:hover {
+  background: #f05065;
+   @include xs-desktop{
+    background-color: gray;
+  }
 }
 
 /*-------Landing page--------*/
@@ -123,11 +236,12 @@ header {
       align-items: center;
       flex-direction: column;
       position: absolute;
-      top: 25%;
+      top: 40%;
       left: 4rem;
       letter-spacing: 1px;
       font-weight: bold;
-      color: rgb(29, 29, 28);
+      color: rgba(41, 41, 40, 0.76);
+      // color: rgb(245, 238, 238);
       h2 {
         text-transform: uppercase;
         font-family: "Yanone Kaffeesatz", sans-serif;
@@ -137,14 +251,17 @@ header {
       }
 
       button {
-        background: none;
-        border: none;
+        background: #f3eeee;
+        background-color: #242222;
+        border: solid 2px #242222;
         width: 100%;
-        //   border-radius: 6rem;
+        border-radius: 6rem;
         font-size: 1.2rem;
-        color: rgb(241, 234, 234);
+        color: #f86b7e;
         padding: 0.7rem;
+        // text-transform: uppercase;
         letter-spacing: 1px;
+        box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
       }
     }
   }
@@ -165,20 +282,18 @@ header {
       }
     }
   }
+
   .banner {
     position: absolute;
     width: 100%;
     height: 100%;
-    // top: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
-    // left: 0;
-    // right: 0;
     margin: auto;
     img {
       max-height: 100%;
-      max-width: 65%;
+      max-width: 57%;
     }
   }
 

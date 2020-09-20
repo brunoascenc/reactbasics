@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { DataContext } from "../data/DataProvider";
 import "../App.css";
 import { Link } from "react-router-dom";
-import banner from '../iphones.png'
+import banner from "../iphones.png";
 import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { IoIosArrowDown } from "react-icons/io";
@@ -18,7 +18,7 @@ const Home = () => {
           <div className="landing-txt">
             <h2>Iphone XR</h2>
             <button>Avaible Now</button>
-            <div className="more-btn"><IoIosArrowDown/></div>
+            {/* <div className="more-btn"><IoIosArrowDown/></div> */}
           </div>
         </div>
         <div className="bg-right">
