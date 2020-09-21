@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Fjalla+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap");
 * {
@@ -125,7 +125,6 @@ header .navbar ul {
 }
 
 header .navbar ul li {
-  font-family: "IBM Plex Sans", sans-serif;
   margin-right: 3rem;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -289,27 +288,33 @@ header .menu-icon {
   left: 4rem;
   letter-spacing: 1px;
   font-weight: bold;
-  color: rgba(41, 41, 40, 0.76);
+  color: rgba(22, 22, 22, 0.76);
 }
 
 .landing-page .bg-left .landing-txt h2 {
   text-transform: uppercase;
-  font-family: "Yanone Kaffeesatz", sans-serif;
-  font-size: 5rem;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 4rem;
   letter-spacing: 5px;
-  font-weight: 100;
+  font-weight: bold;
+}
+
+.landing-page .bg-left .landing-txt span {
+  color: #3ef3db;
 }
 
 .landing-page .bg-left .landing-txt button {
   background: #f3eeee;
-  background-color: #242222;
-  border: solid 2px #242222;
+  background-color: #171818;
+  border: none;
+  border: solid 1px #171818;
   width: 100%;
   border-radius: 6rem;
   font-size: 1.2rem;
-  color: #f86b7e;
+  color: #f05065;
   padding: 0.7rem;
-  letter-spacing: 1px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   -webkit-box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
           box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
 }
@@ -334,7 +339,7 @@ header .menu-icon {
   color: #242222;
 }
 
-.landing-page .banner {
+.landing-page .landing-img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -350,7 +355,7 @@ header .menu-icon {
   margin: auto;
 }
 
-.landing-page .banner img {
+.landing-page .landing-img img {
   max-height: 100%;
   max-width: 57%;
 }
@@ -360,10 +365,179 @@ header .menu-icon {
 }
 
 /*-------Cards--------*/
+.products-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 6rem;
+}
+
+.products-header h1 {
+  text-transform: uppercase;
+  color: #272626;
+  border-bottom: solid 1px #e2dcdc;
+  letter-spacing: 2px;
+}
+
 .card-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-row-gap: 5rem;
+  margin-top: 5rem;
+}
+
+.card-container img {
+  width: 320px;
+}
+
+.card-container .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/*------Apple--------*/
+.banner {
+  width: 100%;
+  height: 70vh;
+  background: #f1324c;
+  margin-top: 100px;
+}
+
+/*------Footer-------*/
+footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-items: center;
+  width: 100%;
+  height: 20%;
+  background-color: #f1324c;
+  margin-top: 10rem;
+  padding: 4rem 0 4rem 0;
+  color: #1f1e1e;
+}
+
+footer .copyright {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+footer .copyright span {
+  font-family: "Fugaz One", cursive;
+  text-transform: uppercase;
+  color: #131212;
+}
+
+footer .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .info h2 {
+  font-family: "Fugaz One", cursive;
+  text-transform: uppercase;
+  color: #131212;
+  border-bottom: solid 1px #1a1919;
+}
+
+footer .info li {
+  list-style: none;
+  margin-top: 6px;
+}
+
+footer .info li a {
+  text-decoration: none;
+  color: #1f1e1e;
+}
+
+footer .info li a:hover {
+  border-bottom: solid 1px #1f1e1e;
+}
+
+footer .newsletter .email {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .newsletter .email h3 {
+  text-transform: uppercase;
+  color: #151616;
+  letter-spacing: 4px;
+  font-size: 2rem;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+
+footer .newsletter .email input {
+  margin-top: 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px #171818;
+  padding: 10px 0 0.5rem 2px;
+  width: 220px;
+  color: #eee5e5;
+}
+
+footer .newsletter .email input::-webkit-input-placeholder {
+  color: #262726;
+}
+
+footer .newsletter .email input:-ms-input-placeholder {
+  color: #262726;
+}
+
+footer .newsletter .email input::-ms-input-placeholder {
+  color: #262726;
+}
+
+footer .newsletter .email input::placeholder {
+  color: #262726;
+}
+
+footer .newsletter .email input:focus {
+  outline: 0;
+}
+
+footer .newsletter .email button {
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: #171818;
+  width: 150px;
+  border: solid 2px #171818;
+  color: #f05065;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border-radius: 6rem;
+  -webkit-box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
+          box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
+}
+
+footer .newsletter .email button:focus {
+  outline: 0;
 }
 /*# sourceMappingURL=App.css.map */

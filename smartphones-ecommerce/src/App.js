@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Details from "./pages/Details";
 import Pagamento from "./pages/Pagamento";
+import Footer from './components/Footer'
 import { DataProvider } from './data/DataProvider'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
@@ -30,6 +31,7 @@ function App() {
             <Route path="/details/:id" component={Details} />
             <Route path="/payment/:id" component={Pagamento} />
           </Switch>
+          <Footer/>
         </div>
       </Router>
     </DataProvider>

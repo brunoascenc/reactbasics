@@ -36,7 +36,7 @@ const Header = () => {
     <div>
       <header>
         <nav className="navbar">
-          <h1>Smartie</h1>
+          <h1>hzone</h1>
           <div className="menu-icon" onClick={handleClick}>
             {click ? <VscClose /> : <VscMenu />}
           </div>

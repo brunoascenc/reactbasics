@@ -13,7 +13,7 @@ const Cart = () => {
       const res = cart.reduce((prev, item) => {
         return prev + item.preco * item.count;
       }, 0);
-      const totalValue = res.toFixed(2);
+      const totalValue = res.toFixed(2).toString().replace(".", ",");
       setTotal(totalValue);
     };
     getTotal();
@@ -58,7 +58,9 @@ const Cart = () => {
           <div key={product.id} className="card">
             <img src={product.imagem} alt={product.titulo} />
             <span>{product.titulo}</span>
-            <span>{product.preco.toFixed(2)}</span>
+            <span>
+              R$ {product.preco.toFixed(2).toString().replace(".", ",")}
+            </span>
 
             <div className="quantity">
               <button onClick={() => decrement(product.id)}> - </button>

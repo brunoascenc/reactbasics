@@ -14,7 +14,7 @@ const Details = (props) => {
     <div>
       <img src={productDetail.imagem} alt={productDetail.titulo} />
       <h3>{productDetail.tituloDetalhe}</h3>
-      <span>{productDetail.preco.toFixed(2)}</span>
+      <span>R$ {productDetail.preco.toFixed(2).toString().replace(".", ",")}</span>
       <Link to="/cart" onClick={() => addCart(productDetail.id)}>
         Add to cart
       </Link>
