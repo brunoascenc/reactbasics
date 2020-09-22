@@ -276,13 +276,13 @@ header .menu-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
   top: 40%;
   left: 4rem;
@@ -293,7 +293,7 @@ header .menu-icon {
 
 .landing-page .bg-left .landing-txt h2 {
   text-transform: uppercase;
-  font-family: 'Fjalla One', sans-serif;
+  font-family: "Fjalla One", sans-serif;
   font-size: 4rem;
   letter-spacing: 5px;
   font-weight: bold;
@@ -414,6 +414,319 @@ header .menu-icon {
   height: 70vh;
   background: #f1324c;
   margin-top: 100px;
+}
+
+/*----------Details-----------*/
+.details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 140px;
+}
+
+.details-container .product-details {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  border: solid 1px #d1c8c8;
+}
+
+.details-container .product-details .img-container {
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.details-container .product-details .img-container .main-img {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.details-container .product-details .img-container .img-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 25px;
+}
+
+.details-container .product-details .img-container .img-options img {
+  cursor: pointer;
+  width: 85px;
+  border: solid 1px #d1c8c8;
+  margin-right: 15px;
+  padding: 0.7rem;
+}
+
+.details-container .product-details .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background: #ece6e6;
+  border-left: solid 1px #d1c8c8;
+  height: 600px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details-container .product-details .info .carrinho-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details-container .product-details .info .carrinho-btn .detalhe {
+  margin-bottom: 0.5rem;
+  color: #4d4b4b;
+  font-size: 0.9rem;
+}
+
+.details-container .product-details .info h1 {
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  color: #242525;
+  border-bottom: dashed 1px #8b8f8f;
+}
+
+.details-container .product-details .info .preco {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: dashed 1px #8b8f8f;
+}
+
+.details-container .product-details .info .preco span {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 2.2rem;
+  color: #f1324c;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.details-container .product-details .info .preco p {
+  margin-top: 5px;
+  color: #4d4b4b;
+}
+
+.details-container .product-details .info button {
+  cursor: pointer;
+  background-color: #171818;
+  border: none;
+  border: solid 1px #171818;
+  width: 100%;
+  border-radius: 6rem;
+  font-size: 1.2rem;
+  color: #f05065;
+  padding: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
+          box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
+  font-size: 1rem;
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.details-container .product-details .info button:focus {
+  outline: none;
+}
+
+.details-container .product-details .info button span {
+  font-size: 1.5rem;
+  margin-left: 5px;
+}
+
+.details-container .hardware {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5rem;
+  border-collapse: collapse;
+  color: #646464;
+}
+
+.details-container .hardware td {
+  padding: 8px 255px 8px 6px;
+}
+
+.details-container .hardware table {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.details-container .hardware tr:nth-child(odd) {
+  background: #e6e3e3;
+  background: #ebeaea;
+}
+
+.details-container .hardware tr:nth-child(even) {
+  background: #f5f2f2;
+}
+
+.details-container th {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #f8f2f2;
+  padding: 6px;
+  text-transform: uppercase;
+  font-family: "Fjalla One", sans-serif;
+  letter-spacing: 2px;
+  color: #353333;
+}
+
+/*--------Cart------------*/
+.cart-container {
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  margin-top: 140px;
+  color: #4d4b4b;
+}
+
+.cart-container .hehe {
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-container .cart-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: solid 1px #b9b2b2;
+  padding: 2rem;
+  width: 100%;
+}
+
+.cart-container .cart-card img {
+  width: 120px;
+}
+
+.cart-container .delete {
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.cart-container h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  color: #242525;
+}
+
+.cart-container .quantity button {
+  cursor: pointer;
+  background-color: #f1324c;
+  border: none;
+  color: white;
+  padding: 6px;
+}
+
+.cart-container .quantity button:focus {
+  outline: 0;
+}
+
+.cart-container .quantity .count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.cart-container .total-price {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-top: 25px;
+}
+
+.cart-container .total-price h3 {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.cart-container .total-price button {
+  cursor: pointer;
+  background: #f1324c;
+  border: none;
+  color: #ebe0e0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: 200px;
+  padding: 1rem;
+  border-radius: 6rem;
+  -webkit-box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
+          box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
+}
+
+.cart-container .total-price button:focus {
+  outline: 0;
 }
 
 /*------Footer-------*/

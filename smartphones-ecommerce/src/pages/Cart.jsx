@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { DataContext } from "../data/DataProvider";
 import Checkout from "../components/Checkout";
+import {AiOutlineClose} from "react-icons/ai";
 
 const Cart = () => {
   const value = useContext(DataContext);
@@ -52,31 +53,42 @@ const Cart = () => {
   if (cart.length === 0) return <h2>Cart vazio</h2>;
 
   return (
-    <div>
-      {cart.map((product) => {
-        return (
-          <div key={product.id} className="card">
-            <img src={product.imagem} alt={product.titulo} />
-            <span>{product.titulo}</span>
-            <span>
-              R$ {product.preco.toFixed(2).toString().replace(".", ",")}
-            </span>
+    <div className="cart-container">
+      <div className="hehe">
+        {cart.map((product) => {
+          return (
+            <div key={product.id} className="cart-card">
+              <img src={product.imagem} alt={product.titulo} />
+              <div>
+                <h3>Produto</h3>
+                <span>{product.titulo}</span>
+              </div>
+              <div>
+                <h3>Preço</h3>
+                <span>
+                  R$ {product.preco.toFixed(2).toString().replace(".", ",")}
+                </span>
+              </div>
 
-            <div className="quantity">
-              <button onClick={() => decrement(product.id)}> - </button>
-              <span>{product.count}</span>
-              <button onClick={() => increment(product.id)}> + </button>
-            </div>
+              <div className="quantity">
+                <h3>Quantidade</h3>
+                <div className="count">
+                  <button onClick={() => decrement(product.id)}> - </button>
+                  <span>{product.count}</span>
+                  <button onClick={() => increment(product.id)}> + </button>
+                </div>
+              </div>
 
-            <div className="delete" onClick={() => removeProduct(product.id)}>
-              x
+              <div className="delete" onClick={() => removeProduct(product.id)}>
+                  <AiOutlineClose />
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
 
       <div className="total-price">
-        <h4>Total: R$: {total}</h4>
+        <h3>Total: R$: {total}</h3>
         <Checkout product={cart} total={total} />
       </div>
     </div>

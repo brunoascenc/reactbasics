@@ -12,27 +12,30 @@ import Pagamento from "./pages/Pagamento";
 import Footer from './components/Footer'
 import { DataProvider } from './data/DataProvider'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ScrollToTop from './components/ScrollToTop'
 import './App.css';
 
 function App() {
   return (
     <DataProvider>
       <Router>
-        <div className="App">
-          <Header />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/apple" component={Apple} />
-            <Route path="/asus" component={Asus} />
-            <Route path="/samsung" component={Samsung} />
-            <Route path="/motorola" component={Motorola} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/cart" component={Cart} />
-            <Route path="/details/:id" component={Details} />
-            <Route path="/payment/:id" component={Pagamento} />
-          </Switch>
-          <Footer/>
-        </div>
+        <ScrollToTop>
+          <div className="App">
+            <Header />
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/apple" component={Apple} />
+              <Route path="/asus" component={Asus} />
+              <Route path="/samsung" component={Samsung} />
+              <Route path="/motorola" component={Motorola} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/cart" component={Cart} />
+              <Route path="/details/:id" component={Details} />
+              <Route path="/payment/:id" component={Pagamento} />
+            </Switch>
+            <Footer />
+          </div>
+        </ScrollToTop>
       </Router>
     </DataProvider>
   );
