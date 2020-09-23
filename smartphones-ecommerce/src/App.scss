@@ -36,6 +36,7 @@ $logo: "Fugaz One", cursive;
 }
 
 @mixin btn {
+  cursor: pointer;
   background-color: #171818;
   border: none;
   border: solid 1px #171818;
@@ -342,30 +343,140 @@ header {
     text-transform: uppercase;
     // font-weight: 100;
     color: rgb(39, 38, 38);
-    border-bottom: solid 1px rgb(226, 220, 220);
+    // border-bottom: dashed 1px rgb(201, 196, 196);
     letter-spacing: 2px;
   }
 }
+
+.see-more{
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  button{
+    @include btn();
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $main-red;
+    border:none;
+    font-size: 1rem;
+    color: rgb(226, 216, 216)
+  }
+}
+
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-row-gap: 5rem;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-gap: 2rem;
+  grid-row-gap: 7rem;
   margin-top: 5rem;
+
   img {
     width: 320px;
   }
   .card {
     @include flexColumn();
     align-items: center;
+    padding: 1rem;
+    // margin: 0 auto;
+    
+    div {
+      @include flexColumn();
+      align-items: center;
+      color: rgb(63, 62, 62);
+      span {
+        font-weight: bold;
+      }
+    }
+    .preco {
+      color: rgb(49, 48, 48);
+      margin-top: 10px;
+      // letter-spacing: 1px;
+      font-size: 1.1rem;
+      font-weight: 100;
+    }
+
+    .parcela{
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-top: 10px;
+      color: rgb(63, 62, 62);
+    }
   }
 }
 
-/*------Apple--------*/
+/*------Banners--------*/
 .banner {
   width: 100%;
   height: 70vh;
   background: $main-red;
   margin-top: 100px;
+}
+
+/*------Contact--------*/
+.contact-container{
+  margin-top: 140px;
+  height: 100vh;
+  @include flexColumn();
+  align-items: center;
+
+  h1{
+    text-transform: uppercase;
+    color: #151616;
+  }
+
+  span{
+    color: #524f4f;
+  }
+
+  form{
+    @include flexColumn();
+    margin-top: 1rem;
+    border: solid 2px rgb(217, 217, 223);
+    padding: 4rem;
+    // background: rgb(233, 225, 225);
+    label{
+      display: block;
+    }
+    .div{
+      background-color: blue;
+      width: 100%;
+      height: 100%;
+    }
+    textarea,input{
+      margin-bottom: 1rem;
+      padding: 8px;
+      height: 45px;
+      border: none;
+      outline: none;
+      border-radius: 2px;
+      border: solid 2px  rgb(196, 187, 187);
+      background: transparent;
+      width: 500px;
+      transition: 0.1s ease-in;
+       &:focus{
+        border: 2px solid $main-red;
+        box-shadow: 0 0 10px #1618185b;
+        background-color: rgb(240, 232, 232);
+      }
+    }
+
+    textarea{
+      font-family: inherit;
+      height: 220px;
+    }
+
+    button{
+      margin-top: 1rem;
+      @include btn();
+      align-self: flex-start;
+      width: 200px;
+      background: $main-red;
+      color: white;
+      border: none;
+    }
+  }
 }
 
 /*----------Details-----------*/
@@ -416,6 +527,7 @@ header {
           font-size: 0.9rem;
         }
       }
+
       h1 {
         font-family: "Fjalla One", sans-serif;
         text-transform: uppercase;
@@ -473,8 +585,7 @@ header {
   }
 
   .hardware tr:nth-child(odd) {
-    background: #e6e3e3;
-    background: #ebeaea;
+    background: #e9e2e2;
   }
   .hardware tr:nth-child(even) {
     background: #f5f2f2;
@@ -544,15 +655,15 @@ header {
       justify-content: space-evenly;
     }
   }
-  
-  .total-price{
+
+  .total-price {
     align-self: flex-end;
     margin-top: 25px;
-    h3{
+    h3 {
       text-transform: uppercase;
       margin-bottom: 5px;
     }
-    button{
+    button {
       cursor: pointer;
       background: $main-red;
       border: none;
@@ -563,7 +674,7 @@ header {
       padding: 1rem;
       border-radius: 6rem;
       box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
-        &:focus {
+      &:focus {
         outline: 0;
       }
     }
@@ -617,9 +728,9 @@ footer {
       h3 {
         text-transform: uppercase;
         color: #151616;
-        letter-spacing: 4px;
-        font-size: 2rem;
-        font-family: "Yanone Kaffeesatz", sans-serif;
+        letter-spacing: 2px;
+        font-size: 1.3rem;
+        font-family: "Fjalla One", sans-serif;
       }
       input {
         margin-top: 10px;

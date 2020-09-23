@@ -378,16 +378,60 @@ header .menu-icon {
 .products-header h1 {
   text-transform: uppercase;
   color: #272626;
-  border-bottom: solid 1px #e2dcdc;
   letter-spacing: 2px;
+}
+
+.see-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5rem;
+}
+
+.see-more button {
+  cursor: pointer;
+  background-color: #171818;
+  border: none;
+  border: solid 1px #171818;
+  width: 100%;
+  border-radius: 6rem;
+  font-size: 1.2rem;
+  color: #f05065;
+  padding: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
+          box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
+  width: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #f1324c;
+  border: none;
+  font-size: 1rem;
+  color: #e2d8d8;
+}
+
+.see-more button:focus {
+  outline: none;
 }
 
 .card-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-row-gap: 5rem;
+  -ms-grid-columns: (minmax(340px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-gap: 2rem;
+  grid-row-gap: 7rem;
   margin-top: 5rem;
 }
 
@@ -406,14 +450,148 @@ header .menu-icon {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 1rem;
 }
 
-/*------Apple--------*/
+.card-container .card div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #3f3e3e;
+}
+
+.card-container .card div span {
+  font-weight: bold;
+}
+
+.card-container .card .preco {
+  color: #313030;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 100;
+}
+
+.card-container .card .parcela {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #3f3e3e;
+}
+
+/*------Banners--------*/
 .banner {
   width: 100%;
   height: 70vh;
   background: #f1324c;
   margin-top: 100px;
+}
+
+/*------Contact--------*/
+.contact-container {
+  margin-top: 140px;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-container h1 {
+  text-transform: uppercase;
+  color: #151616;
+}
+
+.contact-container span {
+  color: #524f4f;
+}
+
+.contact-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 1rem;
+  border: solid 2px #d9d9df;
+  padding: 4rem;
+}
+
+.contact-container form label {
+  display: block;
+}
+
+.contact-container form .div {
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-container form textarea, .contact-container form input {
+  margin-bottom: 1rem;
+  padding: 8px;
+  height: 45px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  border: solid 2px #c4bbbb;
+  background: transparent;
+  width: 500px;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.contact-container form textarea:focus, .contact-container form input:focus {
+  border: 2px solid #f1324c;
+  -webkit-box-shadow: 0 0 10px #1618185b;
+          box-shadow: 0 0 10px #1618185b;
+  background-color: #f0e8e8;
+}
+
+.contact-container form textarea {
+  font-family: inherit;
+  height: 220px;
+}
+
+.contact-container form button {
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: #171818;
+  border: none;
+  border: solid 1px #171818;
+  width: 100%;
+  border-radius: 6rem;
+  font-size: 1.2rem;
+  color: #f05065;
+  padding: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
+          box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 200px;
+  background: #f1324c;
+  color: white;
+  border: none;
+}
+
+.contact-container form button:focus {
+  outline: none;
 }
 
 /*----------Details-----------*/
@@ -550,6 +728,7 @@ header .menu-icon {
 
 .details-container .product-details .info button {
   cursor: pointer;
+  cursor: pointer;
   background-color: #171818;
   border: none;
   border: solid 1px #171818;
@@ -603,8 +782,7 @@ header .menu-icon {
 }
 
 .details-container .hardware tr:nth-child(odd) {
-  background: #e6e3e3;
-  background: #ebeaea;
+  background: #e9e2e2;
 }
 
 .details-container .hardware tr:nth-child(even) {
@@ -800,9 +978,9 @@ footer .newsletter .email {
 footer .newsletter .email h3 {
   text-transform: uppercase;
   color: #151616;
-  letter-spacing: 4px;
-  font-size: 2rem;
-  font-family: "Yanone Kaffeesatz", sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+  font-family: "Fjalla One", sans-serif;
 }
 
 footer .newsletter .email input {

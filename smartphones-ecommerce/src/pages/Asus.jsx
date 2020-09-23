@@ -27,11 +27,15 @@ const Asus = () => {
             <div key={product.id} className="card">
               <Link to={`/details/${product.id}`}>
                 <img src={product.imagem} alt={product.titulo} />
+                <div>
+                  <span>{product.titulo}</span>
+                </div>
               </Link>
-              <span>{product.titulo}</span>
-              <span>
-                R$ {product.preco.toFixed(2).toString().replace(".", ",")}
+              <span className="preco">
+                R$: {product.preco.toFixed(2).toString().replace(".", ",")} à
+                vista
               </span>
+              <span className="parcela">ou {product.parcela}</span>
             </div>
           );
         })}
