@@ -334,6 +334,39 @@ header {
 }
 
 /*-------Cards--------*/
+.filters{
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+  border-top: solid 1px rgb(189, 181, 181);
+  padding: 1rem 0 0 0;
+  margin-top: 5rem;
+  align-items: center;
+  input{
+    width: 550px;
+    height: 20px;
+    padding: 16px;
+    outline: none;
+    border: solid 1px rgb(189, 181, 181);
+  }
+  .marcas{
+    display: flex;
+    align-items: center;
+    h3{
+      margin-right: 15px;
+      text-transform: uppercase;
+      color: rgb(37, 36, 36);
+    }
+    select{
+        // height: 20px;
+        padding: 8px;
+        border: solid 1px rgb(189, 181, 181);
+        outline: none;
+    }
+  }
+}
+
 .products-header {
   display: flex;
   justify-content: center;

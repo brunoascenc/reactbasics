@@ -2,12 +2,10 @@ import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 import LandingPage from "../components/LandingPage";
-import { RiArrowDownSLine } from "react-icons/ri";
-import { IconContext } from "react-icons";
-import SeeMoreBtn from "../components/SeeMoreBtn";
+import useFilteredProds from "../components/useFilteredProds";
 
 const Home = () => {
-  const [handleShowMoreProds, productsToShow, products] = SeeMoreBtn();
+  const [filteredProds, setSearch, setSearchMarca] = useFilteredProds();
 
   return (
     <div className="home">
@@ -15,40 +13,42 @@ const Home = () => {
       <div className="products-header">
         <h1>Mais Vendidos</h1>
       </div>
-      <div className="card-container">
-        {productsToShow.map((product) => {
-          return (
-            <div key={product.id} className="card">
-              <Link to={`/details/${product.id}`}>
-                <img src={product.imagem} alt={product.titulo} />
-                <div>
-                  <span>{product.titulo}</span>
-                </div>
-              </Link>
-              <span className="preco">
-                R$: {product.preco.toFixed(2).toString().replace(".", ",")} à
-                vista
-              </span>
-              <span className="parcela">ou {product.parcela}</span>
-            </div>
-          );
-        })}
+      <div className="filters">
+        <input
+          type="text"
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Pesquise por um produto..."
+        />
+        <div className="marcas">
+          <h3>Marcas: </h3>
+          <select onChange={(e) => setSearchMarca(e.target.value)}>
+            <option value="Apple">Apple</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Asus">Asus</option>
+            <option value="Motorola">Motorola</option>
+          </select>
+        </div>
       </div>
-      <div className="see-more">
-        {productsToShow.length <= products.length ? (
-          <button onClick={handleShowMoreProds}>
-            Veja Mais
-            <IconContext.Provider
-              value={{
-                style: { fontSize: "25px" },
-              }}
-            >
-              <RiArrowDownSLine />
-            </IconContext.Provider>
-          </button>
-        ) : (
-          ""
-        )}
+
+      <div className="card-container">
+        {filteredProds &&
+          filteredProds.map((product) => {
+            return (
+              <div key={product.id} className="card">
+                <Link to={`/details/${product.id}`}>
+                  <img src={product.imagem} alt={product.titulo} />
+                  <div>
+                    <span>{product.titulo}</span>
+                  </div>
+                </Link>
+                <span className="preco">
+                  R$: {product.preco.toFixed(2).toString().replace(".", ",")} à
+                  vista
+                </span>
+                <span className="parcela">ou {product.parcela}</span>
+              </div>
+            );
+          })}
       </div>
     </div>
   );

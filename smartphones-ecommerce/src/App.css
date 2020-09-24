@@ -365,6 +365,52 @@ header .menu-icon {
 }
 
 /*-------Cards--------*/
+.filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+  border-top: solid 1px #bdb5b5;
+  padding: 1rem 0 0 0;
+  margin-top: 5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filters input {
+  width: 550px;
+  height: 20px;
+  padding: 16px;
+  outline: none;
+  border: solid 1px #bdb5b5;
+}
+
+.filters .marcas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filters .marcas h3 {
+  margin-right: 15px;
+  text-transform: uppercase;
+  color: #252424;
+}
+
+.filters .marcas select {
+  padding: 8px;
+  border: solid 1px #bdb5b5;
+  outline: none;
+}
+
 .products-header {
   display: -webkit-box;
   display: -ms-flexbox;
