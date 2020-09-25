@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../data/DataProvider";
 import Dropdown from "../components/Dropdown";
 import "../App.css";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart} from "react-icons/ai";
 import { IconContext } from "react-icons";
 import { VscMenu, VscClose } from "react-icons/vsc";
 import { IoIosArrowDown } from "react-icons/io";
@@ -15,6 +15,7 @@ const Header = () => {
   const [dropdown, setDropdown] = useState(false);
 
   const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -41,19 +42,20 @@ const Header = () => {
             {click ? <VscClose /> : <VscMenu />}
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <Link to="/">
+            <h1 className="hidden-link">hzone</h1>
+            <Link to="/" onClick={closeMobileMenu}>
               <li className="nav-link">Home</li>
             </Link>
-            <Link to="/apple">
+            <Link to="/apple" onClick={closeMobileMenu}>
               <li className="hidden-link">Apple</li>
             </Link>
-            <Link to="/samsung">
+            <Link to="/samsung" onClick={closeMobileMenu}>
               <li className="hidden-link">Samsung</li>
             </Link>
-            <Link to="/motorola">
+            <Link to="/motorola" onClick={closeMobileMenu}>
               <li className="hidden-link">Motorola</li>
             </Link>
-            <Link to="/asus">
+            <Link to="/asus" onClick={closeMobileMenu}>
               <li className="hidden-link">Asus</li>
             </Link>
             <li
@@ -79,11 +81,11 @@ const Header = () => {
               {/* <Dropdown /> */}
               {dropdown && <Dropdown />}
             </li>
-            <Link to="/contact">
+            <Link to="/contact" onClick={closeMobileMenu}>
               <li className="nav-link">Contact</li>
             </Link>
             <div className="cart">
-              <Link to="/cart">
+              <Link to="/cart" onClick={closeMobileMenu}>
                 <IconContext.Provider
                   value={{
                     style: { fontSize: "35px" },

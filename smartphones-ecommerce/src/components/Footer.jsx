@@ -5,13 +5,8 @@ const Footer = () => {
     return (
       <div className="footer-container">
         <footer>
-          <div className="copyright">
-            <p>
-              Copyright &copy; 2020 | <span>hzone</span>
-            </p>
-          </div>
           <div className="info">
-            <h2>hzone</h2>
+            <h4>Hzone</h4>
             <li>
               <a href="/#">Sobre</a>
             </li>
@@ -25,15 +20,51 @@ const Footer = () => {
               <a href="/#">Políticas de Privacidade</a>
             </li>
             <li>
-              <a href="/#">Lojas</a>
+              <a href="/#">Lojas hzone</a>
+            </li>
+          </div>
+          <div className="info">
+            <h4>Dúvidas frequentes</h4>
+            <li>
+              <a href="/#">Troca</a>
+            </li>
+            <li>
+              <a href="/#">Devolução</a>
+            </li>
+            <li>
+              <a href="/#">Garantia</a>
+            </li>
+            <li>
+              <a href="/#">Produto com defeito</a>
+            </li>
+            <li>
+              <a href="/#">Prazo de entrega</a>
+            </li>
+          </div>
+          <div className="info">
+            <h4>Parceiros</h4>
+            <li>
+              <a href="/#">Apple</a>
+            </li>
+            <li>
+              <a href="/#">Samsung</a>
+            </li>
+            <li>
+              <a href="/#">Motorola</a>
+            </li>
+            <li>
+              <a href="/#">Asus</a>
             </li>
           </div>
           <div className="newsletter">
             <div className="email">
-              <h3>Receba novidades</h3>
+              <h5>Cadastre-se</h5>
               <input type="email" placeholder="Seu email..." />
               <button>Enviar</button>
             </div>
+          </div>
+          <div className="copyright">
+            <p className="text-center">Copyright &copy; 2020 | HZONE</p>
           </div>
         </footer>
       </div>
