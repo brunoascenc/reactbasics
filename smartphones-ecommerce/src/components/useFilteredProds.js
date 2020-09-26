@@ -23,11 +23,7 @@ const useFilteredProds = () => {
     );
   }, [searchMarca, products]);
 
-  return [
-    filteredProds,
-    setSearch,
-    setSearchMarca
-  ];
+  return [filteredProds, setSearch, setSearchMarca];
 };
 
 export default useFilteredProds;

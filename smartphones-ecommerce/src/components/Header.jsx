@@ -37,7 +37,10 @@ const Header = () => {
     <div>
       <header>
         <nav className="navbar">
-          <h1>hzone</h1>
+          <Link to="/">
+            <h1>hzone</h1>
+          </Link>
+          {/* <h1>hzone</h1> */}
           <div className="menu-icon" onClick={handleClick}>
             {click ? <VscClose /> : <VscMenu />}
           </div>
@@ -63,7 +66,7 @@ const Header = () => {
               onMouseEnter={onMouseEnter}
               onMouseLeave={onMouseLeave}
             >
-              <Link to="/shop" className="shop-link">
+              <Link to="/#" className="shop-link">
                 Shop
                 <IconContext.Provider
                   value={{

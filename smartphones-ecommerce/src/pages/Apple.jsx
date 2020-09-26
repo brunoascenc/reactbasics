@@ -1,13 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../App.css";
 import appleBanner from "../img/applebanner.png";
 import useFilteredProds from "../components/useFilteredProds";
-// import FilterOptions from '../components/useFilterOptions'
+import OrderBy from '../components/OderBy'
+import ProductCard from "../components/ProductsCard";
 
 const Apple = () => {
   const [filteredProds, setSearch] = useFilteredProds();
   const appleProd = filteredProds.filter((cel) => cel.marca === "Apple");
+  const [sorted, handleOrderBy] = OrderBy(appleProd);
 
   const bannerStyle = {
     background: `url(${appleBanner}) no-repeat`,
@@ -17,8 +18,7 @@ const Apple = () => {
 
   return (
     <div className="container">
-      <div className="banner" style={bannerStyle}>
-      </div>
+      <div className="banner" style={bannerStyle}></div>
       <div className="products-header">
         <h1>Apple</h1>
       </div>
@@ -29,33 +29,15 @@ const Apple = () => {
           placeholder="Pesquise por um produto..."
         />
         <div className="marcas">
-          <h3>Ordenar por: </h3>
-          <select>
-            <option value="asc">Maior preço</option>
+          <p>Ordenar por: </p>
+          <select onChange={(e) => handleOrderBy(e.target.value)}>
+            <option value="">Mais vendidos</option>
             <option value="desc">Menor preço</option>
+            <option value="asc">Maior preço</option>
           </select>
         </div>
       </div>
-      <div className="card-container">
-        {appleProd &&
-          appleProd.map((product) => {
-            return (
-              <div key={product.id} className="card">
-                <Link to={`/details/${product.id}`}>
-                  <img src={product.imagem} alt={product.titulo} />
-                  <div>
-                    <span>{product.titulo}</span>
-                  </div>
-                </Link>
-                <span className="preco">
-                  R$: {product.preco.toFixed(2).toString().replace(".", ",")} à
-                  vista
-                </span>
-                <span className="parcela">ou {product.parcela}</span>
-              </div>
-            );
-          })}
-      </div>
+      <ProductCard productName={sorted}/>
     </div>
   );
 };

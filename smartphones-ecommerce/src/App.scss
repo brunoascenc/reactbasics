@@ -9,10 +9,10 @@
 }
 html,
 body {
-  overflow-x: hidden; 
+  overflow-x: hidden;
   font-family: "IBM Plex Sans", sans-serif;
+  // background: #ebe5e5;
 }
-
 
 // .App{
 //   position: relative;
@@ -50,29 +50,25 @@ $logo: "Fugaz One", cursive;
   }
 }
 
-
-
-
 @mixin btnReset {
-    cursor: pointer;
-    background-color: rgb(13, 156, 212);
-    border: none;
-    outline: none;
-    color: #f8f8f8;
+  cursor: pointer;
+  background-color: rgb(13, 156, 212);
+  border: none;
+  outline: none;
+  color: #f8f8f8;
 }
 
-
-@mixin linksReset{
-    list-style: none;
-    text-decoration: none;
-    color: rgb(59, 59, 59);
+@mixin linksReset {
+  list-style: none;
+  text-decoration: none;
+  color: rgb(59, 59, 59);
 }
 
 @mixin columnCenter {
-    display: flex;
-    // justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 @mixin btn {
@@ -108,6 +104,7 @@ header {
   top: 10px;
   width: 100%;
   left: 0;
+  z-index: 100;
   //   display: flex;
   //   align-items: center;
   height: 20vh;
@@ -311,7 +308,7 @@ header {
   grid-template-columns: 1fr 1fr;
   // align-items: center;
   width: 100%;
-  @include mobile{
+  @include mobile {
     grid-template-columns: 1fr;
   }
   .bg-left {
@@ -319,33 +316,31 @@ header {
     background: $main-red;
     display: flex;
     align-items: center;
-                @include tablet{
+    @include tablet {
       align-items: flex-end;
       // margin-bottom: 2rem;
     }
 
     .landing-txt {
       @include flexColumn();
-      align-items: center;
+      align-items: flex-start;
       margin-left: 3rem;
       letter-spacing: 1px;
       font-weight: bold;
       color: rgba(22, 22, 22, 0.76);
       width: 50%;
       // color: #22d8bd;
-      @include tablet{
+      @include tablet {
         // margin-bottom: 2rem;
         display: none;
         // width: 100%;
-      //         position: absolute;
-      // margin: auto;
-      // background: #151616;
-      // color: white;
-      // right: -95px;
-      // z-index: 100;
+        //         position: absolute;
+        // margin: auto;
+        // background: #151616;
+        // color: white;
+        // right: -95px;
+        // z-index: 100;
       }
-
-
 
       @include mobile {
         margin-left: 2rem;
@@ -370,15 +365,15 @@ header {
           // text-orientation: upright;
           font-size: 2rem;
           // margin-bottom: 2rem;
-                  // display: none;
+          // display: none;
         }
-        @include mobile{
+        @include mobile {
           font-size: 1.3rem;
         }
       }
 
       span {
-        color: rgb(231, 220, 220);
+        color: rgb(24, 23, 23);
       }
 
       button {
@@ -386,7 +381,7 @@ header {
         background-color: #171818;
         border: none;
         border: solid 1px #171818;
-        width: 100%;
+        width: 290px;
         border-radius: 6rem;
         font-size: 1.2rem;
         color: #f05065;
@@ -403,13 +398,13 @@ header {
         @include tablet {
           width: 60%;
           // display: none;
-      //     @include tablet{
-      // position: absolute;
-      // margin: auto;
-      // right:  -70px;
-      // }
+          //     @include tablet{
+          // position: absolute;
+          // margin: auto;
+          // right:  -70px;
+          // }
         }
-        @include mobile{
+        @include mobile {
           font-size: 0.8rem;
           padding: 8px;
           // width: 50%;
@@ -430,10 +425,10 @@ header {
     .socials {
       margin-right: 3rem;
 
-      @include tablet{
-      // position: absolute;
-      // margin: auto;
-      // left: -70px;
+      @include tablet {
+        // position: absolute;
+        // margin: auto;
+        // left: -70px;
       }
       @include mobile {
         margin-right: 2rem;
@@ -473,7 +468,7 @@ header {
       @include tablet {
         max-width: 80%;
       }
-      @include mobile{
+      @include mobile {
         max-width: 100%;
       }
     }
@@ -490,10 +485,10 @@ header {
   justify-content: space-between;
   width: 85%;
   margin: 0 auto;
-  border-top: solid 1px rgb(189, 181, 181);
+  border-top: solid 1px rgb(219, 209, 209);
   padding: 1rem 0 0 0;
-  margin-top: 5rem;
-  @include tablet{
+  margin-top: 1rem;
+  @include tablet {
     margin-top: 1rem;
   }
   align-items: center;
@@ -502,32 +497,39 @@ header {
     height: 20px;
     padding: 16px;
     outline: none;
-    border: solid 1px rgb(189, 181, 181);
-    @include xs-desktop{
+    border: solid 1px rgb(223, 213, 213);
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #bdc0c05b;
+    @include xs-desktop {
       width: 50%;
     }
-    @include mobile{
-      width: 60%;
+    @include mobile {
+      width: 50%;
     }
   }
   .marcas {
     display: flex;
     align-items: center;
-    h3 {
+    p {
       margin-right: 15px;
-      text-transform: uppercase;
-      color: rgb(37, 36, 36);
-      @include tablet{
+      letter-spacing: 1px;
+      // text-transform: uppercase;
+      color: rgb(49, 46, 46);
+      @include tablet {
         font-size: 1rem;
       }
-      @include mobile{
+      @include mobile {
         display: none;
       }
     }
     select {
+      cursor: pointer;
       // height: 20px;
       padding: 8px;
-      border: solid 1px rgb(189, 181, 181);
+      border: solid 1px rgb(219, 209, 209);
+      border-radius: 3px;
+      box-shadow: 0 0 10px #bdc0c05b;
       outline: none;
     }
   }
@@ -539,6 +541,7 @@ header {
   margin-top: 6rem;
   h1 {
     // font-family: "Yanone Kaffeesatz", sans-serif;
+    font-family: "Fjalla One", sans-serif;
     text-transform: uppercase;
     // font-weight: 100;
     color: rgb(54, 53, 53);
@@ -567,27 +570,36 @@ header {
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 2rem;
   grid-row-gap: 7rem;
+  grid-gap: 7rem;
   width: 1150px;
   margin: 0 auto;
   margin-top: 5rem;
-  @include small-desktop{
+  @include small-desktop {
     width: 85%;
-
   }
 
   img {
     width: 320px;
-    @include tablet{
+    margin-bottom: 0.5rem;
+    // padding: 2rem;
+    // border-radius: 3rem;
+    // background: #ffffff;
+    // box-shadow: 0 0 10px #bfc7c75b;
+    @include tablet {
       width: 250px;
     }
   }
   .card {
+    // position: relative;
+    background: #ffffff;
     @include flexColumn();
     align-items: center;
-    padding: 1rem;
-    // margin: 0 auto;
+    padding: 2rem;
+    // margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #bdc0c05b;
+    // // margin: 0 auto;
 
     div {
       @include flexColumn();
@@ -628,9 +640,9 @@ header {
   height: 100vh;
   @include flexColumn();
   align-items: center;
-   @include mobile{
-        padding: 1rem;
-      }
+  @include mobile {
+    padding: 1rem;
+  }
 
   h1 {
     text-transform: uppercase;
@@ -647,9 +659,9 @@ header {
     border: solid 2px rgb(217, 217, 223);
     padding: 4rem;
     // background: rgb(233, 225, 225);
-     @include mobile{
-        padding: 2rem;
-      }
+    @include mobile {
+      padding: 2rem;
+    }
     label {
       display: block;
     }
@@ -675,10 +687,10 @@ header {
         box-shadow: 0 0 10px #1618185b;
         background-color: rgb(240, 232, 232);
       }
-      @include tablet{
+      @include tablet {
         width: 400px;
       }
-      @include mobile{
+      @include mobile {
         width: 100%;
       }
     }
@@ -707,13 +719,16 @@ header {
   // padding: 2rem;;
   margin: 0 auto;
   margin-top: 140px;
+  border-radius: 3px;
   .product-details {
+    background: #ffffff;
+    box-shadow: 0 0 10px #bdc0c05b;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     // justify-items: center;
-    border: solid 1px #d1c8c8;
-    @include mobile{
-     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    border: solid 1px #e7e0e0;
+    @include mobile {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     .img-container {
       padding: 2rem;
@@ -722,7 +737,7 @@ header {
       .main-img {
         width: 350px;
         margin: 0 auto;
-        @include mobile{
+        @include mobile {
           max-width: 100%;
         }
       }
@@ -736,7 +751,7 @@ header {
           border: solid 1px #d1c8c8;
           margin-right: 15px;
           padding: 0.7rem;
-          @include mobile{
+          @include mobile {
             width: 60px;
           }
         }
@@ -746,8 +761,8 @@ header {
     .info {
       @include flexColumn();
       justify-content: space-evenly;
-      background: #ece6e6;
-      border-left: solid 1px #d1c8c8;
+      background: rgb(240, 234, 234);
+      border-left: solid 1px #ece3e3;
       height: 600px;
       align-items: center;
       .carrinho-btn {
@@ -765,7 +780,7 @@ header {
         text-transform: uppercase;
         color: #242525;
         border-bottom: dashed 1px #8b8f8f;
-        @include mobile{
+        @include mobile {
           font-size: 1.4rem;
         }
       }
@@ -781,9 +796,9 @@ header {
           letter-spacing: 1px;
           font-weight: bold;
           margin-top: 5px;
-          @include mobile{
-          font-size: 1.7rem;
-        }
+          @include mobile {
+            font-size: 1.7rem;
+          }
         }
 
         p {
@@ -804,11 +819,11 @@ header {
           font-size: 1.5rem;
           margin-left: 5px;
         }
-        @include tablet{
+        @include tablet {
           width: 100%;
           padding: 16px;
         }
-        @include mobile{
+        @include mobile {
           width: 100%;
           padding: 12px;
           font-size: 0.8rem;
@@ -823,7 +838,7 @@ header {
     margin-top: 5rem;
     border-collapse: collapse;
     color: rgb(100, 100, 100);
-    @include mobile{
+    @include mobile {
       font-size: 0.8rem;
     }
     td {
@@ -850,7 +865,7 @@ header {
     font-family: "Fjalla One", sans-serif;
     letter-spacing: 2px;
     color: #353333;
-    @include mobile{
+    @include mobile {
       padding: 2px;
       margin-bottom: 10px;
     }
@@ -858,44 +873,44 @@ header {
 }
 
 /*--------Cart------------*/
-.empty-cart{
+.empty-cart {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-   @include mobile{
-      padding: 3rem;
-    }
-  h1{
+  @include mobile {
+    padding: 3rem;
+  }
+  h1 {
     font-family: "Fjalla One", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: rgb(26, 24, 24);
     margin-bottom: 10px;
-    @include mobile{
+    @include mobile {
       font-size: 1.3rem;
     }
   }
-  .message{
+  .message {
     background: $main-red;
     padding: 6rem;
     border-radius: 2rem;
-    @include mobile{
+    @include mobile {
       display: flex;
       align-items: center;
       flex-direction: column;
       padding: 1rem;
       border-radius: 1rem;
     }
-    p{
+    p {
       color: rgb(26, 24, 24);
-      @include mobile{
+      @include mobile {
         font-size: 0.8rem;
       }
     }
-    a{
-      color:rgb(17, 16, 16);
+    a {
+      color: rgb(17, 16, 16);
       border-bottom: dashed 1px rgb(26, 24, 24);
     }
   }
@@ -909,7 +924,7 @@ header {
   // justify-content: space-between;
   margin-top: 140px;
   color: rgb(77, 75, 75);
-  @include small-desktop{
+  @include small-desktop {
     width: 85%;
   }
   // .hehe{
@@ -926,23 +941,23 @@ header {
     border-bottom: solid 1px rgb(185, 178, 178);
     padding: 2rem;
     width: 100%;
-    @include tablet{
+    @include tablet {
       flex-direction: column;
       align-items: flex-start;
     }
     img {
       width: 120px;
-      @include tablet{
+      @include tablet {
         width: 220px;
         margin-bottom: 4rem;
-        align-self: center;;
+        align-self: center;
       }
     }
   }
   .delete {
     cursor: pointer;
     font-size: 2rem;
-    @include tablet{
+    @include tablet {
       align-self: flex-end;
     }
   }
@@ -953,8 +968,8 @@ header {
     color: #242525;
   }
 
-  .preco-cart{
-    @include tablet{
+  .preco-cart {
+    @include tablet {
       padding: 2rem 0 0 0;
       width: 100%;
       margin-top: 25px;
@@ -962,16 +977,16 @@ header {
     }
   }
 
-    .prod-cart{
-      @include tablet{
+  .prod-cart {
+    @include tablet {
       padding: 2rem 0 0 0;
       width: 100%;
       border-top: solid 1px rgb(214, 204, 204);
-      }
     }
+  }
 
   .quantity {
-    @include tablet{
+    @include tablet {
       padding: 2rem 0 0 0;
       border-top: solid 1px rgb(214, 204, 204);
       margin-top: 25px;
@@ -993,10 +1008,9 @@ header {
       display: flex;
       align-items: center;
       // justify-content: space-evenly;
-      span{
-    
-         margin-left: 1rem;
-         margin-right: 1rem;
+      span {
+        margin-left: 1rem;
+        margin-right: 1rem;
       }
     }
   }
@@ -1004,15 +1018,15 @@ header {
   .total-price {
     align-self: flex-end;
     margin-top: 25px;
-    @include tablet{
+    @include tablet {
       margin-top: -25px;
     }
     h3 {
       text-transform: uppercase;
       margin-bottom: 5px;
-      @include tablet{
-      margin-top: 100px;
-    }
+      @include tablet {
+        margin-top: 100px;
+      }
     }
     button {
       cursor: pointer;
@@ -1039,10 +1053,11 @@ footer {
   flex-wrap: wrap;
   border-top: solid 1px rgb(212, 207, 207);
   background: #e7e2e2;
+  background: #f8f4f4;
   margin-top: 10rem;
   height: 100%;
   justify-content: space-between;
-  @include mobile{
+  @include mobile {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     height: 100%;
@@ -1078,7 +1093,7 @@ footer {
     .socials i {
       color: rgb(0, 183, 255);
       padding: 2px;
-      ul{
+      ul {
         display: flex;
       }
     }

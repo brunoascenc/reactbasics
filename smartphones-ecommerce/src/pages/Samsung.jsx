@@ -1,13 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../App.css";
 import samBanner from "../img/sambanner.jpg";
 import useFilteredProds from "../components/useFilteredProds";
-// import FilterOptions from '../components/useFilterOptions'
+import OrderBy from "../components/OderBy";
+import ProductCard from "../components/ProductsCard";
+
 
 const Samsung = () => {
   const [filteredProds, setSearch] = useFilteredProds();
   const samProd = filteredProds.filter((cel) => cel.marca === "Samsung");
+  const [sorted, handleOrderBy] = OrderBy(samProd);
 
   const bannerStyle = {
     background: `url(${samBanner}) no-repeat`,
@@ -28,33 +30,15 @@ const Samsung = () => {
           placeholder="Pesquise por um produto..."
         />
         <div className="marcas">
-          <h3>Ordenar por: </h3>
-          <select>
-            <option value="asc">Maior preço</option>
+          <p>Ordenar por: </p>
+          <select onChange={(e) => handleOrderBy(e.target.value)}>
+            <option value="">Mais vendidos</option>
             <option value="desc">Menor preço</option>
+            <option value="asc">Maior preço</option>
           </select>
         </div>
       </div>
-      <div className="card-container">
-        {samProd &&
-          samProd.map((product) => {
-            return (
-              <div key={product.id} className="card">
-                <Link to={`/details/${product.id}`}>
-                  <img src={product.imagem} alt={product.titulo} />
-                  <div>
-                    <span>{product.titulo}</span>
-                  </div>
-                </Link>
-                <span className="preco">
-                  R$: {product.preco.toFixed(2).toString().replace(".", ",")} à
-                  vista
-                </span>
-                <span className="parcela">ou {product.parcela}</span>
-              </div>
-            );
-          })}
-      </div>
+      <ProductCard productName={sorted}/>
     </div>
   );
 };
