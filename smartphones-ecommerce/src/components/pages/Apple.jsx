@@ -1,9 +1,9 @@
 import React from "react";
-import "../App.css";
-import appleBanner from "../img/applebanner.png";
-import useFilteredProds from "../components/useFilteredProds";
-import OrderBy from '../components/OderBy'
-import ProductCard from "../components/ProductsCard";
+import "../../App.css";
+import appleBanner from "../../img/applebanner.png";
+import useFilteredProds from "../hooks/useFilteredProds";
+import OrderBy from "../hooks/OrderBy";
+import ProductCard from "../ProductsCard";
 
 const Apple = () => {
   const [filteredProds, setSearch] = useFilteredProds();
@@ -37,7 +37,7 @@ const Apple = () => {
           </select>
         </div>
       </div>
-      <ProductCard productName={sorted}/>
+      <ProductCard productName={sorted} />
     </div>
   );
 };

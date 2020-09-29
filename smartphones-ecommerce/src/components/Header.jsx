@@ -1,21 +1,33 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../data/DataProvider";
 import Dropdown from "../components/Dropdown";
 import "../App.css";
-import { AiOutlineShoppingCart} from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import { VscMenu, VscClose } from "react-icons/vsc";
 import { IoIosArrowDown } from "react-icons/io";
+import { TweenMax, Power3 } from "gsap";
 
 const Header = () => {
+  let header = useRef(null);
   const value = useContext(DataContext);
   const [cart] = value.cart;
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
+  //Mobile menu
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  useEffect(() => {
+    TweenMax.from(header, 2, {
+      opacity: 0,
+      y: -30,
+      delay: 5.5,
+      ease: Power3.easeOut,
+    });
+  }, []);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -35,12 +47,11 @@ const Header = () => {
 
   return (
     <div>
-      <header>
+      <header ref={(el) => (header = el)}>
         <nav className="navbar">
           <Link to="/">
             <h1>hzone</h1>
           </Link>
-          {/* <h1>hzone</h1> */}
           <div className="menu-icon" onClick={handleClick}>
             {click ? <VscClose /> : <VscMenu />}
           </div>
@@ -80,8 +91,6 @@ const Header = () => {
                   <IoIosArrowDown />
                 </IconContext.Provider>
               </Link>
-              {/* {window.innerWidth < 960 ? "s" : "a"} */}
-              {/* <Dropdown /> */}
               {dropdown && <Dropdown />}
             </li>
             <Link to="/contact" onClick={closeMobileMenu}>
@@ -98,8 +107,6 @@ const Header = () => {
                     <AiOutlineShoppingCart />
                   </li>
                 </IconContext.Provider>
-
-                {/* <BiCart /> */}
                 <span className="cart-qtd">{cart.length}</span>
               </Link>
             </div>

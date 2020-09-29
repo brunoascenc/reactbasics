@@ -1,7 +1,7 @@
-import React, { useContext, useState} from "react";
-import { DataContext } from "../data/DataProvider";
+import React, { useContext, useState } from "react";
+import { DataContext } from "../../data/DataProvider";
 import { Link } from "react-router-dom";
-import { AiOutlineShoppingCart} from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Details = (props) => {
   const value = useContext(DataContext);
@@ -11,11 +11,11 @@ const Details = (props) => {
     (item) => item.id === props.match.params.id
   );
 
-  const [img, setImg] = useState(productDetail.imagem)
+  const [img, setImg] = useState(productDetail.imagem);
 
-  const changeImg = e => {
-    setImg(e.target.src)
-  }
+  const changeImg = (e) => {
+    setImg(e.target.src);
+  };
 
   return (
     <div className="details-container">

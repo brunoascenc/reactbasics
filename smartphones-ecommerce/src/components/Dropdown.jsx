@@ -4,7 +4,6 @@ import "../App.css";
 
 const Dropdown = () => {
   const [click, setClick] = useState(false);
-
   const handleClick = () => setClick(!click);
 
   return (

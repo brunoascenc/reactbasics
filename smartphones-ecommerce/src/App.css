@@ -24,8 +24,8 @@ header {
   top: 10px;
   width: 100%;
   left: 0;
-  z-index: 100;
-  height: 20vh;
+  z-index: 1;
+  height: 12vh;
 }
 
 @media (max-width: 960px) {
@@ -277,6 +277,31 @@ header .menu-icon {
   }
 }
 
+.loader {
+  position: absolute;
+  background-color: #4bedc2;
+  background-color: #0f0f0f;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loader h1 {
+  color: #f1324c;
+  font-family: "Fugaz One", cursive;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 /*-------Landing page--------*/
 .landing-page {
   position: relative;
@@ -289,15 +314,10 @@ header .menu-icon {
   width: 100%;
 }
 
-@media (max-width: 575px) {
-  .landing-page {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-  }
-}
-
 .landing-page .bg-left {
   background: #f1324c;
+  opacity: 0;
+  height: 0vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,6 +346,7 @@ header .menu-icon {
       -ms-flex-align: start;
           align-items: flex-start;
   margin-left: 3rem;
+  opacity: 1;
   letter-spacing: 1px;
   font-weight: bold;
   color: rgba(22, 22, 22, 0.76);
@@ -381,7 +402,7 @@ header .menu-icon {
 }
 
 .landing-page .bg-left .landing-txt span {
-  color: #181717;
+  color: rgba(22, 22, 22, 0.76);
 }
 
 .landing-page .bg-left .landing-txt button {
@@ -496,6 +517,7 @@ header .menu-icon {
 
 .landing-page .landing-img img {
   max-height: 100%;
+  opacity: 1;
   max-width: 57%;
 }
 
@@ -515,7 +537,7 @@ header .menu-icon {
   font-size: 2.5rem;
 }
 
-/*-------Cards--------*/
+/*-------Filters--------*/
 .filters {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -600,6 +622,7 @@ header .menu-icon {
   outline: none;
 }
 
+/*------CARDS--------*/
 .products-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -615,50 +638,6 @@ header .menu-icon {
   text-transform: uppercase;
   color: #363535;
   letter-spacing: 2px;
-}
-
-.see-more {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 5rem;
-}
-
-.see-more button {
-  cursor: pointer;
-  background-color: #171818;
-  border: none;
-  border: solid 1px #171818;
-  width: 100%;
-  border-radius: 6rem;
-  font-size: 1.2rem;
-  color: #f05065;
-  padding: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  -webkit-box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
-          box-shadow: 4px 5px 15px rgba(12, 12, 12, 0.63);
-  width: 180px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: #f1324c;
-  border: none;
-  font-size: 1rem;
-  color: #e2d8d8;
-}
-
-.see-more button:focus {
-  outline: none;
 }
 
 .card-container {
@@ -798,6 +777,35 @@ header .menu-icon {
   }
 }
 
+.contact-container form .input,
+.contact-container form .message {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact-container form .input .invalid,
+.contact-container form .message .invalid {
+  margin-top: -12px;
+  margin-bottom: 5px;
+  color: #e93d3d;
+  letter-spacing: 1px;
+}
+
+.contact-container form .input .valid,
+.contact-container form .message .valid {
+  position: absolute;
+  margin-bottom: 20px;
+  right: 15px;
+  top: 13px;
+  color: #312f2f;
+}
+
 .contact-container form label {
   display: block;
 }
@@ -816,7 +824,7 @@ header .menu-icon {
   border: none;
   outline: none;
   border-radius: 2px;
-  border: solid 2px #c4bbbb;
+  border: solid 2px #e2d8d8;
   background: transparent;
   width: 500px;
   -webkit-transition: 0.1s ease-in;
@@ -1184,7 +1192,8 @@ header .menu-icon {
 }
 
 .empty-cart .message {
-  background: #f1324c;
+  background: #ddd5d5;
+  color: #2b2929;
   padding: 6rem;
   border-radius: 2rem;
 }
@@ -1541,6 +1550,8 @@ footer .newsletter .email button {
   border: none;
   text-transform: capitalize;
   width: 121%;
+  -webkit-box-shadow: 4px 5px 15px rgba(160, 155, 155, 0.63);
+          box-shadow: 4px 5px 15px rgba(160, 155, 155, 0.63);
 }
 
 footer .newsletter .email button:focus {
@@ -1562,5 +1573,82 @@ footer .copyright {
   color: #0f0f0f;
   padding: 4% 0 2% 0%;
   font-size: 0.8rem;
+}
+
+/*------------Modal---------------*/
+.modal {
+  width: 60%;
+  height: 250px;
+  position: absolute;
+  padding: 2rem;
+  border-radius: 3rem;
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  top: 50%;
+  outline: none;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: solid 1px #e6dddd;
+  background: #ddd5d5;
+  color: #2b2929;
+}
+
+@media (max-width: 767px) {
+  .modal {
+    width: 85%;
+  }
+}
+
+@media (max-width: 575px) {
+  .modal {
+    padding: 1rem;
+    width: 95%;
+  }
+}
+
+.modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-content h1 {
+  letter-spacing: 2px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 767px) {
+  .modal-content h1 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+  }
+}
+
+.modal-content button {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #2e2c2c;
+  font-size: 2rem;
+}
+
+.modal-content button:focus {
+  outline: none;
 }
 /*# sourceMappingURL=App.css.map */

@@ -11,12 +11,7 @@ html,
 body {
   overflow-x: hidden;
   font-family: "IBM Plex Sans", sans-serif;
-  // background: #ebe5e5;
 }
-
-// .App{
-//   position: relative;
-// }
 
 //Vars
 $small-desktop: 1200px;
@@ -66,7 +61,6 @@ $logo: "Fugaz One", cursive;
 
 @mixin columnCenter {
   display: flex;
-  // justify-content: center;
   align-items: center;
   flex-direction: column;
 }
@@ -104,11 +98,8 @@ header {
   top: 10px;
   width: 100%;
   left: 0;
-  z-index: 100;
-  //   display: flex;
-  //   align-items: center;
-  height: 20vh;
-  //   background-color: #CF6766;
+  z-index: 1;
+  height: 12vh;
   @include xs-desktop {
     top: 0;
   }
@@ -127,9 +118,6 @@ header {
     @include tablet {
       width: 100%;
     }
-    // @include mobile {
-    //   width: 100%;
-    // }
   }
 
   .nav-menu.active {
@@ -159,7 +147,6 @@ header {
       font-family: "Fugaz One", cursive;
       text-transform: uppercase;
       color: rgb(41, 40, 40);
-      // color: rgb(240, 245, 239);
       font-size: 2.3rem;
       @include mobile {
         margin-left: 2rem;
@@ -187,7 +174,6 @@ header {
       }
 
       li {
-        // font-family: "IBM Plex Sans", sans-serif;
         margin-right: 3rem;
         font-size: 1.2rem;
         text-transform: uppercase;
@@ -198,7 +184,6 @@ header {
           font-size: 1.3rem;
           padding: 15px 50px;
           border-bottom: solid 1px #f3445b;
-          // font-weight: bold;
           letter-spacing: 2px;
           transition: 0.2s ease;
           &:hover {
@@ -298,6 +283,24 @@ header {
     background-color: gray;
   }
 }
+.loader{
+  position: absolute;
+  // right: 0;
+  background-color: #4bedc2;
+  background-color:rgb(15, 15, 15);
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1{
+    color: $main-red;
+    font-family: "Fugaz One", cursive;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
 
 /*-------Landing page--------*/
 .landing-page {
@@ -306,40 +309,32 @@ header {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  // align-items: center;
   width: 100%;
   @include mobile {
-    grid-template-columns: 1fr;
+    // grid-template-columns: 1fr;
   }
   .bg-left {
-    // position: relative;
     background: $main-red;
+    opacity: 0;
+    // background: yellow;
+    height: 0vh;
     display: flex;
     align-items: center;
     @include tablet {
       align-items: flex-end;
-      // margin-bottom: 2rem;
     }
 
     .landing-txt {
       @include flexColumn();
       align-items: flex-start;
       margin-left: 3rem;
+      opacity: 1;
       letter-spacing: 1px;
       font-weight: bold;
       color: rgba(22, 22, 22, 0.76);
       width: 50%;
-      // color: #22d8bd;
       @include tablet {
-        // margin-bottom: 2rem;
         display: none;
-        // width: 100%;
-        //         position: absolute;
-        // margin: auto;
-        // background: #151616;
-        // color: white;
-        // right: -95px;
-        // z-index: 100;
       }
 
       @include mobile {
@@ -347,7 +342,6 @@ header {
       }
       h2 {
         text-transform: uppercase;
-        // font-family: "Yanone Kaffeesatz", sans-serif;
         font-family: "Fjalla One", sans-serif;
         font-size: 4rem;
         letter-spacing: 5px;
@@ -361,11 +355,7 @@ header {
           font-size: 2rem;
         }
         @include tablet {
-          // writing-mode: vertical-rl;
-          // text-orientation: upright;
           font-size: 2rem;
-          // margin-bottom: 2rem;
-          // display: none;
         }
         @include mobile {
           font-size: 1.3rem;
@@ -373,7 +363,7 @@ header {
       }
 
       span {
-        color: rgb(24, 23, 23);
+        color: rgba(22, 22, 22, 0.76);
       }
 
       button {
@@ -397,17 +387,10 @@ header {
 
         @include tablet {
           width: 60%;
-          // display: none;
-          //     @include tablet{
-          // position: absolute;
-          // margin: auto;
-          // right:  -70px;
-          // }
         }
         @include mobile {
           font-size: 0.8rem;
           padding: 8px;
-          // width: 50%;
         }
       }
     }
@@ -425,11 +408,6 @@ header {
     .socials {
       margin-right: 3rem;
 
-      @include tablet {
-        // position: absolute;
-        // margin: auto;
-        // left: -70px;
-      }
       @include mobile {
         margin-right: 2rem;
       }
@@ -461,10 +439,8 @@ header {
     margin: auto;
     img {
       max-height: 100%;
+      opacity: 1;
       max-width: 57%;
-      // @include tablet{
-      //   max-width: 70%;
-      // }
       @include tablet {
         max-width: 80%;
       }
@@ -479,7 +455,7 @@ header {
   }
 }
 
-/*-------Cards--------*/
+/*-------Filters--------*/
 .filters {
   display: flex;
   justify-content: space-between;
@@ -514,7 +490,6 @@ header {
     p {
       margin-right: 15px;
       letter-spacing: 1px;
-      // text-transform: uppercase;
       color: rgb(49, 46, 46);
       @include tablet {
         font-size: 1rem;
@@ -525,7 +500,6 @@ header {
     }
     select {
       cursor: pointer;
-      // height: 20px;
       padding: 8px;
       border: solid 1px rgb(219, 209, 209);
       border-radius: 3px;
@@ -535,37 +509,35 @@ header {
   }
 }
 
+/*------CARDS--------*/
 .products-header {
   display: flex;
   justify-content: center;
   margin-top: 6rem;
   h1 {
-    // font-family: "Yanone Kaffeesatz", sans-serif;
     font-family: "Fjalla One", sans-serif;
     text-transform: uppercase;
-    // font-weight: 100;
     color: rgb(54, 53, 53);
-    // border-bottom: dashed 1px rgb(201, 196, 196);
     letter-spacing: 2px;
   }
 }
 
-.see-more {
-  display: flex;
-  justify-content: center;
-  margin-top: 5rem;
-  button {
-    @include btn();
-    width: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: $main-red;
-    border: none;
-    font-size: 1rem;
-    color: rgb(226, 216, 216);
-  }
-}
+// .see-more {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 5rem;
+//   button {
+//     @include btn();
+//     width: 180px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     background: $main-red;
+//     border: none;
+//     font-size: 1rem;
+//     color: rgb(226, 216, 216);
+//   }
+// }
 
 .card-container {
   display: grid;
@@ -582,24 +554,17 @@ header {
   img {
     width: 320px;
     margin-bottom: 0.5rem;
-    // padding: 2rem;
-    // border-radius: 3rem;
-    // background: #ffffff;
-    // box-shadow: 0 0 10px #bfc7c75b;
     @include tablet {
       width: 250px;
     }
   }
   .card {
-    // position: relative;
     background: #ffffff;
     @include flexColumn();
     align-items: center;
     padding: 2rem;
-    // margin: 1rem;
     border-radius: 3px;
     box-shadow: 0 0 10px #bdc0c05b;
-    // // margin: 0 auto;
 
     div {
       @include flexColumn();
@@ -612,7 +577,6 @@ header {
     .preco {
       color: rgb(49, 48, 48);
       margin-top: 10px;
-      // letter-spacing: 1px;
       font-size: 1.1rem;
       font-weight: 100;
     }
@@ -658,10 +622,30 @@ header {
     margin-top: 1rem;
     border: solid 2px rgb(217, 217, 223);
     padding: 4rem;
-    // background: rgb(233, 225, 225);
     @include mobile {
       padding: 2rem;
     }
+
+    .input,
+    .message {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      .invalid {
+        margin-top: -12px;
+        margin-bottom: 5px;
+        color: rgb(233, 61, 61);
+        letter-spacing: 1px;
+      }
+      .valid {
+        position: absolute;
+        margin-bottom: 20px;
+        right: 15px;
+        top: 13px;
+        color: rgb(49, 47, 47);
+      }
+    }
+
     label {
       display: block;
     }
@@ -678,7 +662,7 @@ header {
       border: none;
       outline: none;
       border-radius: 2px;
-      border: solid 2px rgb(196, 187, 187);
+      border: solid 2px rgb(226, 216, 216);
       background: transparent;
       width: 500px;
       transition: 0.1s ease-in;
@@ -716,7 +700,6 @@ header {
 .details-container {
   @include flexColumn();
   width: 85%;
-  // padding: 2rem;;
   margin: 0 auto;
   margin-top: 140px;
   border-radius: 3px;
@@ -725,7 +708,6 @@ header {
     box-shadow: 0 0 10px #bdc0c05b;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    // justify-items: center;
     border: solid 1px #e7e0e0;
     @include mobile {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -893,7 +875,8 @@ header {
     }
   }
   .message {
-    background: $main-red;
+    background: rgb(221, 213, 213);
+    color: rgb(43, 41, 41);
     padding: 6rem;
     border-radius: 2rem;
     @include mobile {
@@ -927,17 +910,12 @@ header {
   @include small-desktop {
     width: 85%;
   }
-  // .hehe{
-  //   // margin-bottom: 10rem;
-  // }
 
   .cart-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     border-bottom: solid 1px rgb(185, 178, 178);
     padding: 2rem;
     width: 100%;
@@ -1007,7 +985,6 @@ header {
     .count {
       display: flex;
       align-items: center;
-      // justify-content: space-evenly;
       span {
         margin-left: 1rem;
         margin-right: 1rem;
@@ -1111,7 +1088,6 @@ footer {
         outline: none;
         border-radius: 2px;
         border: solid 1px rgb(219, 209, 209);
-        // background: rgb(22, 22, 22);
         color: rgb(197, 185, 185);
       }
 
@@ -1126,6 +1102,7 @@ footer {
         border: none;
         text-transform: capitalize;
         width: 121%;
+        box-shadow: 4px 5px 15px rgba(160, 155, 155, 0.63);
       }
     }
   }
@@ -1138,5 +1115,61 @@ footer {
     color: #0f0f0f;
     padding: 4% 0 2% 0%;
     font-size: 0.8rem;
+  }
+}
+
+/*------------Modal---------------*/
+.modal {
+  width: 60%;
+  height: 250px;
+  position: absolute;
+  padding: 2rem;
+  border-radius: 3rem;
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  top: 50%;
+  outline: none;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px rgb(230, 221, 221);
+  background: rgb(221, 213, 213);
+  color: rgb(43, 41, 41);
+  @include tablet {
+    width: 85%;
+  }
+  @include mobile {
+    padding: 1rem;
+    width: 95%;
+  }
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    letter-spacing: 2px;
+    justify-self: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    @include tablet {
+      font-size: 1.3rem;
+      margin-top: 2rem;
+    }
+  }
+
+  button {
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgb(46, 44, 44);
+    font-size: 2rem;
+    &:focus {
+      outline: none;
+    }
   }
 }

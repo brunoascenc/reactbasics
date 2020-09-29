@@ -1,11 +1,12 @@
 import React from "react";
-import "../App.css";
-import LandingPage from "../components/LandingPage";
-import useFilteredProds from "../components/useFilteredProds";
-import ProductCard from "../components/ProductsCard";
+import "../../App.css";
+import LandingPage from "../LandingPage";
+import useFilteredProds from "../hooks/useFilteredProds";
+import ProductCard from "../ProductsCard";
 
 const Home = () => {
   const [filteredProds, setSearch, setSearchMarca] = useFilteredProds();
+
   return (
     <div className="home">
       <LandingPage />
@@ -20,7 +21,13 @@ const Home = () => {
         />
         <div className="marcas">
           <p>Marcas: </p>
-          <select onChange={(e) => setSearchMarca(e.target.value)}>
+          <select
+            defaultValue={"DEFAULT"}
+            onChange={(e) => setSearchMarca(e.target.value)}
+          >
+            <option value="DEFAULT" disabled>
+              Selecione
+            </option>
             <option value="Apple">Apple</option>
             <option value="Samsung">Samsung</option>
             <option value="Asus">Asus</option>

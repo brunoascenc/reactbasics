@@ -6,7 +6,7 @@ const stripe = require("stripe")(
   "sk_test_51HSKkOGiY20xWn7qTUteeXOsyjrkENIjCwgsJ2a58lBr0dI4TqTx9FZAxIpMqz66OnANpgcI3PyR5mlgW3V8wGvH00O8Mpl441"
 );
 
-const uuid = require("uuid/v4");
+const { v4: uuid } = require('uuid');
 
 const app = express();
 
