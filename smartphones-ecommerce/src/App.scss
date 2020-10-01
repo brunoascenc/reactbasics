@@ -93,10 +93,12 @@ a {
   text-decoration: none;
 }
 
+
 header {
   position: absolute;
   top: 10px;
   width: 100%;
+  opacity: 1;
   left: 0;
   z-index: 1;
   height: 12vh;
@@ -287,15 +289,17 @@ header {
   position: absolute;
   // right: 0;
   background-color: #4bedc2;
-  background-color:rgb(15, 15, 15);
+  background-color:rgb(241, 232, 232);
+  // background: $main-red;
   width: 100vw;
   height: 100vh;
-  z-index: 100;
+  z-index: 10000000000000000000000000;
   display: flex;
   align-items: center;
   justify-content: center;
   h1{
     color: $main-red;
+    color: #161515;
     font-family: "Fugaz One", cursive;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -305,7 +309,7 @@ header {
 /*-------Landing page--------*/
 .landing-page {
   position: relative;
-  z-index: -1;
+  // z-index: ;
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -329,6 +333,7 @@ header {
       align-items: flex-start;
       margin-left: 3rem;
       opacity: 1;
+      z-index: 100;
       letter-spacing: 1px;
       font-weight: bold;
       color: rgba(22, 22, 22, 0.76);
@@ -367,6 +372,7 @@ header {
       }
 
       button {
+        cursor: pointer;
         background: #f3eeee;
         background-color: #171818;
         border: none;
@@ -391,6 +397,9 @@ header {
         @include mobile {
           font-size: 0.8rem;
           padding: 8px;
+        }
+        &:focus{
+          outline: none;
         }
       }
     }
@@ -1119,6 +1128,19 @@ footer {
 }
 
 /*------------Modal---------------*/
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+
 .modal {
   width: 60%;
   height: 250px;
@@ -1133,6 +1155,7 @@ footer {
   right: auto;
   bottom: auto;
   margin-right: -50%;
+  transition: 5s ease-in-out;
   transform: translate(-50%, -50%);
   border: solid 1px rgb(230, 221, 221);
   background: rgb(221, 213, 213);

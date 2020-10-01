@@ -22,7 +22,6 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function Form() {
-  //Form modal
   const [modalIsOpen, setIsOpen] = useState(false);
   function openModal() {
     setIsOpen(true);
@@ -57,6 +56,7 @@ export default function Form() {
       }) => (
         <form onSubmit={handleSubmit}>
           <Modal
+            closeTimeoutMS={200}
             className="modal"
             isOpen={modalIsOpen}
             ariaHideApp={false}

@@ -40,6 +40,7 @@ const Checkout = ({ total, product }) => {
   return (
     <div>
       <Modal
+        closeTimeoutMS={200}
         className="modal"
         isOpen={modalIsOpen}
         ariaHideApp={false}

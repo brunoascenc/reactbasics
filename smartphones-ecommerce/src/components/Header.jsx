@@ -24,10 +24,11 @@ const Header = () => {
     TweenMax.from(header, 2, {
       opacity: 0,
       y: -30,
+      zIndex: 0,
       delay: 5.5,
       ease: Power3.easeOut,
     });
-  }, []);
+},[]);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {

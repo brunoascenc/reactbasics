@@ -3,9 +3,8 @@ import "../App.css";
 import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import banner from "../img/iphones.png";
-
 import { TweenMax, Power3 } from "gsap";
-
+  
 const LandingPage = () => {
   let landingImg,
     bgLeft,
@@ -14,6 +13,8 @@ const LandingPage = () => {
     loaderTxt,
     socials = useRef(null);
 
+
+  // GSAP animations
   useEffect(() => {
     TweenMax.from(landingImg, 4, {
       opacity: 0,
@@ -25,7 +26,7 @@ const LandingPage = () => {
     TweenMax.to(bgLeft, 3, {
       opacity: 1,
       height: "100vh",
-      delay: 1,
+      delay: 1.3,
       background: "#f1324c",
       ease: Power3.easeInOut,
     });
@@ -52,7 +53,7 @@ const LandingPage = () => {
       delay: 0.5,
       ease: Power3.easeInOut,
     });
-  }, []);
+  }, [landingImg, bgLeft, landingTxt, loader, loaderTxt, socials]);
 
   return (
     <div className="landing-page">

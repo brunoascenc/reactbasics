@@ -23,6 +23,7 @@ header {
   position: absolute;
   top: 10px;
   width: 100%;
+  opacity: 1;
   left: 0;
   z-index: 1;
   height: 12vh;
@@ -280,10 +281,10 @@ header .menu-icon {
 .loader {
   position: absolute;
   background-color: #4bedc2;
-  background-color: #0f0f0f;
+  background-color: #f1e8e8;
   width: 100vw;
   height: 100vh;
-  z-index: 100;
+  z-index: 10000000000000000000000000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -297,6 +298,7 @@ header .menu-icon {
 
 .loader h1 {
   color: #f1324c;
+  color: #161515;
   font-family: "Fugaz One", cursive;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -305,7 +307,6 @@ header .menu-icon {
 /*-------Landing page--------*/
 .landing-page {
   position: relative;
-  z-index: -1;
   height: 100vh;
   display: -ms-grid;
   display: grid;
@@ -347,6 +348,7 @@ header .menu-icon {
           align-items: flex-start;
   margin-left: 3rem;
   opacity: 1;
+  z-index: 100;
   letter-spacing: 1px;
   font-weight: bold;
   color: rgba(22, 22, 22, 0.76);
@@ -406,6 +408,7 @@ header .menu-icon {
 }
 
 .landing-page .bg-left .landing-txt button {
+  cursor: pointer;
   background: #f3eeee;
   background-color: #171818;
   border: none;
@@ -441,6 +444,10 @@ header .menu-icon {
     font-size: 0.8rem;
     padding: 8px;
   }
+}
+
+.landing-page .bg-left .landing-txt button:focus {
+  outline: none;
 }
 
 .landing-page .bg-right {
@@ -1576,6 +1583,20 @@ footer .copyright {
 }
 
 /*------------Modal---------------*/
+.ReactModal__Overlay {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
 .modal {
   width: 60%;
   height: 250px;
@@ -1590,6 +1611,8 @@ footer .copyright {
   right: auto;
   bottom: auto;
   margin-right: -50%;
+  -webkit-transition: 5s ease-in-out;
+  transition: 5s ease-in-out;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border: solid 1px #e6dddd;
