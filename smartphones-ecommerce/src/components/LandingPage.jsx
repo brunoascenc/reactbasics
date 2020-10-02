@@ -4,7 +4,8 @@ import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import banner from "../img/iphones.png";
 import { TweenMax, Power3 } from "gsap";
-  
+import { Link } from "react-scroll";
+
 const LandingPage = () => {
   let landingImg,
     bgLeft,
@@ -12,7 +13,6 @@ const LandingPage = () => {
     loader,
     loaderTxt,
     socials = useRef(null);
-
 
   // GSAP animations
   useEffect(() => {
@@ -62,7 +62,16 @@ const LandingPage = () => {
           <h2>
             Iphone <span>11</span>
           </h2>
-          <button>Compre ja</button>
+          <Link
+            activeClass="active"
+            to="xd"
+            offset={-150}
+            spy={true}
+            smooth={true}
+            duration={1000}
+          >
+            <button>Compre ja</button>
+          </Link>
         </div>
       </div>
       <div className="bg-right">

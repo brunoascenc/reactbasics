@@ -10,6 +10,7 @@ const Home = () => {
   return (
     <div className="home">
       <LandingPage />
+      <div className="home-content" id="xd">
       <div className="products-header">
         <h1>Mais Vendidos</h1>
       </div>
@@ -36,6 +37,8 @@ const Home = () => {
         </div>
       </div>
       <ProductCard productName={filteredProds} />
+      </div>
+
     </div>
   );
 };

@@ -19,14 +19,24 @@ a {
   text-decoration: none;
 }
 
+.scrolled {
+  position: fixed;
+  background-color: #ecf1f3;
+  -webkit-box-shadow: 0px 5px 15px rgba(20, 20, 20, 0.178);
+          box-shadow: 0px 5px 15px rgba(20, 20, 20, 0.178);
+}
+
 header {
   position: absolute;
-  top: 10px;
+  position: fixed;
+  top: 0px;
   width: 100%;
   opacity: 1;
   left: 0;
-  z-index: 1;
+  z-index: 100;
   height: 12vh;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 @media (max-width: 960px) {
@@ -99,6 +109,7 @@ header .navbar h1 {
   text-transform: uppercase;
   color: #292828;
   font-size: 2.3rem;
+  margin-top: 10px;
 }
 
 @media (max-width: 575px) {
@@ -280,7 +291,6 @@ header .menu-icon {
 
 .loader {
   position: absolute;
-  background-color: #4bedc2;
   background-color: #f1e8e8;
   width: 100vw;
   height: 100vh;
@@ -302,6 +312,10 @@ header .menu-icon {
   font-family: "Fugaz One", cursive;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.home {
+  z-index: -1;
 }
 
 /*-------Landing page--------*/
@@ -348,16 +362,15 @@ header .menu-icon {
           align-items: flex-start;
   margin-left: 3rem;
   opacity: 1;
-  z-index: 100;
+  z-index: 1;
   letter-spacing: 1px;
   font-weight: bold;
   color: rgba(22, 22, 22, 0.76);
-  width: 50%;
 }
 
 @media (max-width: 767px) {
   .landing-page .bg-left .landing-txt {
-    display: none;
+    margin-bottom: 2rem;
   }
 }
 
@@ -391,15 +404,10 @@ header .menu-icon {
   }
 }
 
-@media (max-width: 767px) {
-  .landing-page .bg-left .landing-txt h2 {
-    font-size: 2rem;
-  }
-}
-
 @media (max-width: 575px) {
   .landing-page .bg-left .landing-txt h2 {
-    font-size: 1.3rem;
+    font-size: 1rem;
+    letter-spacing: 4px;
   }
 }
 
@@ -429,20 +437,21 @@ header .menu-icon {
     font-size: 1rem;
     -ms-flex-item-align: start;
         align-self: flex-start;
-    width: 85%;
+    width: 200px;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 960px) {
   .landing-page .bg-left .landing-txt button {
-    width: 60%;
+    width: 170px;
   }
 }
 
 @media (max-width: 575px) {
   .landing-page .bg-left .landing-txt button {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     padding: 8px;
+    width: 100px;
   }
 }
 
@@ -474,6 +483,7 @@ header .menu-icon {
 
 .landing-page .bg-right .socials {
   margin-right: 3rem;
+  z-index: 1;
 }
 
 @media (max-width: 575px) {
@@ -496,6 +506,7 @@ header .menu-icon {
 }
 
 .landing-page .bg-right .socials ul li {
+  cursor: pointer;
   margin-top: 1rem;
   color: #242222;
 }
@@ -552,7 +563,7 @@ header .menu-icon {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 85%;
+  width: 1150px;
   margin: 0 auto;
   border-top: solid 1px #dbd1d1;
   padding: 1rem 0 0 0;
@@ -560,6 +571,12 @@ header .menu-icon {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .filters {
+    width: 85%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -578,6 +595,12 @@ header .menu-icon {
   border-radius: 3px;
   -webkit-box-shadow: 0 0 10px #bdc0c05b;
           box-shadow: 0 0 10px #bdc0c05b;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.filters input:focus {
+  border: 1px solid #f1324c;
 }
 
 @media (max-width: 960px) {
@@ -1008,13 +1031,21 @@ header .menu-icon {
 
 .details-container .product-details .info .carrinho-btn .detalhe {
   margin-bottom: 0.5rem;
+  text-align: center;
   color: #4d4b4b;
   font-size: 0.9rem;
+}
+
+@media (max-width: 575px) {
+  .details-container .product-details .info {
+    padding: 1rem;
+  }
 }
 
 .details-container .product-details .info h1 {
   font-family: "Fjalla One", sans-serif;
   text-transform: uppercase;
+  text-align: center;
   color: #242525;
   border-bottom: dashed 1px #8b8f8f;
 }
@@ -1057,6 +1088,7 @@ header .menu-icon {
 .details-container .product-details .info .preco p {
   margin-top: 5px;
   color: #4d4b4b;
+  text-align: center;
 }
 
 .details-container .product-details .info button {
@@ -1175,6 +1207,7 @@ header .menu-icon {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
   height: 100vh;
 }
 
@@ -1602,7 +1635,7 @@ footer .copyright {
   height: 250px;
   position: absolute;
   padding: 2rem;
-  border-radius: 3rem;
+  border-radius: 2rem;
   font-family: "Fjalla One", sans-serif;
   text-transform: uppercase;
   top: 50%;
@@ -1652,6 +1685,7 @@ footer .copyright {
       justify-self: center;
   margin-top: 15px;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 @media (max-width: 767px) {

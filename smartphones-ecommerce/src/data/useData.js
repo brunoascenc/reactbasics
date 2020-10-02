@@ -829,7 +829,7 @@ const useData = () => {
       traseira:
         "https://imagens.trocafone.com/images/phones/dt-galaxy-s9-azul-traseira.png",
       count: 1,
-    },
+    }
   ]);
   return [products, setProducts];
 };

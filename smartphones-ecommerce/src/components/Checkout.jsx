@@ -8,7 +8,7 @@ const Checkout = ({ total, product }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   function openModal() {
     setIsOpen(true);
-  }
+  } 
 
   //Reset cart
   function closeModal() {

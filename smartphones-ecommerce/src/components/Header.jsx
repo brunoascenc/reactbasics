@@ -20,6 +20,26 @@ const Header = () => {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
+  //Sticky nav
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  });
+
+  let sticky = ["navbar"];
+  if (scrolled) {
+    sticky.push("scrolled");
+  }
+
   useEffect(() => {
     TweenMax.from(header, 2, {
       opacity: 0,
@@ -28,7 +48,7 @@ const Header = () => {
       delay: 5.5,
       ease: Power3.easeOut,
     });
-},[]);
+  }, []);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -48,7 +68,7 @@ const Header = () => {
 
   return (
     <div>
-      <header ref={(el) => (header = el)}>
+      <header className={sticky.join(" ")} ref={(el) => (header = el)}>
         <nav className="navbar">
           <Link to="/">
             <h1>hzone</h1>
