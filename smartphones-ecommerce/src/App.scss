@@ -7,6 +7,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   overflow-x: hidden;
@@ -498,12 +499,12 @@ header {
     padding: 16px;
     outline: none;
     border: solid 1px rgb(223, 213, 213);
-    background-color: #ffffff;
+    background-color: #f7f0f0;
     border-radius: 3px;
-    box-shadow: 0 0 10px #bdc0c05b;
+    box-shadow: 0 0 10px #bfc7c7da;
     transition: 0.1s ease-in;
     &:focus {
-      border: 1px solid $main-red;
+      border: 1px solid #f86376;
     }
     @include xs-desktop {
       width: 50%;
@@ -531,8 +532,11 @@ header {
       padding: 8px;
       border: solid 1px rgb(219, 209, 209);
       border-radius: 3px;
-      box-shadow: 0 0 10px #bdc0c05b;
+      box-shadow: 0 0 10px #bfc7c7da;
       outline: none;
+      &:focus {
+        border: 1px solid #f86376;
+      }
     }
   }
 }

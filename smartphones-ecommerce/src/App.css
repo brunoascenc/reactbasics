@@ -591,16 +591,16 @@ header .menu-icon {
   padding: 16px;
   outline: none;
   border: solid 1px #dfd5d5;
-  background-color: #ffffff;
+  background-color: #f7f0f0;
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 10px #bdc0c05b;
-          box-shadow: 0 0 10px #bdc0c05b;
+  -webkit-box-shadow: 0 0 10px #bfc7c7da;
+          box-shadow: 0 0 10px #bfc7c7da;
   -webkit-transition: 0.1s ease-in;
   transition: 0.1s ease-in;
 }
 
 .filters input:focus {
-  border: 1px solid #f1324c;
+  border: 1px solid #f86376;
 }
 
 @media (max-width: 960px) {
@@ -647,9 +647,13 @@ header .menu-icon {
   padding: 8px;
   border: solid 1px #dbd1d1;
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 10px #bdc0c05b;
-          box-shadow: 0 0 10px #bdc0c05b;
+  -webkit-box-shadow: 0 0 10px #bfc7c7da;
+          box-shadow: 0 0 10px #bfc7c7da;
   outline: none;
+}
+
+.filters .marcas select:focus {
+  border: 1px solid #f86376;
 }
 
 /*------CARDS--------*/

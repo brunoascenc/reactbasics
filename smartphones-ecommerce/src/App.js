@@ -20,7 +20,7 @@ function App() {
       <Router>
         <ScrollToTop>
           <div className="App">
-            <Header/>
+            <Header />
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/apple" component={Apple} />
