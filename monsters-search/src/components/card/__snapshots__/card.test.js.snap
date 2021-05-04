@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect to render Card Component 1`] = `
+"<div className=\\"card-container\\">
+  <img src={[undefined]} alt=\\"monster\\" />
+  <h2 />
+  <p />
+</div>"
+`;

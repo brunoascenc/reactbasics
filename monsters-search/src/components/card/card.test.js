@@ -1,5 +1,8 @@
-import {shallow, mount, render} from 'enzyme';
+import {shallow} from 'enzyme';
 import React from 'react'
-import { Card } from './Card';
+import {Card}  from './Card';
 
-console.log(shallow(<Card/>))
+it('expect to render Card Component', () => {
+   const cardComponent = shallow(<Card />);
+   expect(cardComponent.debug()).toMatchSnapshot()
+})
