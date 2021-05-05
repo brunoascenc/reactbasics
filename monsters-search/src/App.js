@@ -12,7 +12,6 @@ class App extends Component {
       searchField: "",
     };
 
-    // this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount() {
@@ -25,12 +24,18 @@ class App extends Component {
     this.setState({ searchField: e.target.value });
   };
 
-  render() {
-    const { monsters, searchField } = this.state;
-
-    const filteredMonsters = monsters.filter((monster) =>
-      monster.name.toLowerCase().includes(searchField.toLowerCase())
+  filterRobots = monsters => {
+    return monsters.filter((monster) =>
+      monster.name.toLowerCase().includes(this.props.searchField.toLowerCase())
     );
+  }
+
+  render() {
+    const { monsters } = this.state;
+
+    // const filteredMonsters = monsters.filter((monster) =>
+    //   monster.name.toLowerCase().includes(searchField.toLowerCase())
+    // );
 
     return (
       <div className="App">
@@ -39,7 +44,7 @@ class App extends Component {
           placeholder="search monster"
           handleChange={this.handleChange}
         />
-        <CardList monsters={filteredMonsters} />
+        <CardList monsters={this.filterRobots(monsters)} />
       </div>
     );
   }
