@@ -19,5 +19,19 @@ it("renders App without crashing", () => {
 });
 
 it("filters robots correctly", () => {
-  expect(wrapper.instance().filterRobots([])).toEqual([]);
+
+  const mockProps2 = {
+    onRequestRobots: jest.fn(),
+    robots: [{
+      id: 3,
+      name: 'John',
+      email:'john@gmail.com'
+    }],
+    searchField: "a",
+    isPending: false,
+  };
+  const wrapper2 = shallow(<App {...mockProps2} />);
+  expect(wrapper2.instance().filterRobots()).toEqual([]);
+  expect(wrapper2.instance().filterRobots()).toEqual([]);
+
 });

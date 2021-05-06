@@ -25,7 +25,7 @@ class App extends Component {
   };
 
   filterRobots = monsters => {
-    return monsters.filter((monster) =>
+    return smonsters.filter((monster) =>
       monster.name.toLowerCase().includes(this.props.searchField.toLowerCase())
     );
   }
